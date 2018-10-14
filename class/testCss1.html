@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* id选择器 */
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+
+        /* 标签选择器 */
+        div {
+            color: green;
+        }
+
+        /* class选择器 */
+        .aa {
+            width: 100px;
+            height: 100px;
+            color: goldenrod;
+        }
+
+        /* 后代后代选择器 */
+        /* div span{
+            color: pink;
+        } */
+
+        /* 子代选择器 */
+        div>span {
+            color: pink;
+        }
+
+        #ul1 .dd {
+            background: blue;
+        }
+
+        /* 分组选择器，群组选择器 */
+        p,li {
+            color: #bfa;
+        }
+    </style>
+</head>
+
+<body>
+    <div><b>1111</b></div>
+    <div id="div1"><b>222</b></div>
+    <div><b>333</b></div>
+
+    <div class="aa"><b>444</b></div>
+    <div class="aa"><b>555</b></div>
+    <div><b>666</b></div>
+
+    <div>
+        <span>spanspan</span><br>
+        <a href="#">aaaa</a>
+        <span>asdasdas</span><br>
+        <p>adasdasda<span>asdasdas</span></p>
+    </div>
+
+    <ul id="ul1">
+        <li>11</li>
+        <li class="dd">22</li>
+        <li class="dd">33</li>
+    </ul>
+
+
+</body>
+
+
+
+
+
+
+
+</html>
