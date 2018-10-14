@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+    table{
+        background-color: blue;
+        border-style:solid;
+        border-color:green;
+    }
+    td{
+        padding:10px;
+        border:20px;
+        border-style:solid;
+        border-color: red;
+    }
+    </style>
 </head>
 
 <body style="height:2000px">
@@ -41,14 +54,14 @@
         abcdef
     </span>
     <span>
-            abcdef
+        abcdef
     </span>
 <!-- 
     行级元素 多个占一行
     
     块级元素 自己占一行
  -->
-    <table border="1">
+    <table border="20">
         <tr>            
             <td>11</td>
             <td>22</td>
@@ -56,6 +69,50 @@
         </tr>    
     </table>
     
+    <form>
+        <!-- for 只识别id -->
+        <label for="aa">用户名：<label><input id="aa" type="text"><br/>
+        <label for="bb">密码</label><input id="bb" type="password"><br/>
+        <!-- 单选框 -->
+        <input type="radio" name="sex" value="男">男
+        <input type="radio" name="sex" value="女">女
+        <br/>
+        <!-- 复选框 -->
+        <input type="checkbox" name="hobby">足球
+        <input type="checkbox" name="hobby">篮球
+        <input type="checkbox" name="hobby">乒乓球
+        <!-- 下拉框 -->
+        <select>
+            <option value="">16级</option>
+            <option value="">17级</option>
+            <option value="">18级</option>
+        </select>
+        <br/>
+        <!-- 文本域 -->
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <!-- 按钮 -->
+        <button>提交</button><br/>
+        <input type="submit" value="提交表单">
+    </form>
+
+    <br>
+    <form>
+        文本框<input type="text" name="text" placeholder="123"><br>
+        密码框<input type="password" name="psw"><br>
+        下拉框
+        <select>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        <br>
+        name1<input type="radio" name="name1">
+        name2<input type="radio" name="name1">
+        <br>
+        name1<input type="checkbox" name="111"><br>
+        name2<input type="checkbox" name="222"><br>
+        <input type="submit" value="提交">
+    </form>
 </body>
 
 </html>
