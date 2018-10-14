@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function myfunction(){
+            document.getElementById("demo").innerHTML = Date();
+        }
+        function timeFunction(){
+            var t = setTimeout("alert('五秒！')",5000);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="myfunction()">点击</button><br>
+    <button onclick="timeFunction()">五秒后的警示框</button>
+    <p id="demo"></p>
+</body>
+</html>
