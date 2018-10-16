@@ -12,17 +12,24 @@
             background: red;
             /* 上右下左的顺序 */
             /* padding: 10px 100px 20px 50px; */
-            padding: 50px;
+            /* padding: 50px;
             border:5px solid black;
-            margin:30px;
+            margin:30px; */
+
+            box-sizing: border-box;/* 怪异盒模型*/
+            box-sizing: content-box;/*默认值 标准盒模型*/
+            padding: 20px;
+            border:20px solid black;
+
         }
     </style>
 </head>
 <body>
     <!--
 
-        css标准盒模型
-        怪异盒模型
+        css标准盒模型 wigth + padding + border
+        怪异盒模型 没写doctype IE6以下浏览器 width
+
     -->
     <div>gterwe gterwe gterwe gterwe gterwe gterwe gterwe gterwe gterwe gterwe </div>
 </body>
