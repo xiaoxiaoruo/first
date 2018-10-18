@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1,#div2,#div3 {
+            width: 100px;
+            height: 80px;
+            border: 1px solid black;
+            background: red;
+            float: left;
+        }
+        #div0{
+            background: yellow;
+            /* height: 80px; */
+            /* overflow: hidden; */
+        }
+        h3{
+            background: green;
+        }
+        .icon{
+            position: absolute;
+            right: -16px;
+            top:-15px;
+            background:pink;
+
+        }
+        #div1{
+            position: relative;
+        }
+        .clear{
+            clear: left;
+        }
+        /* #div0::after{
+            content: '';
+            clear: both;
+            display: block;
+        } */
+        .clearfix::after{
+            content: '';
+            clear: both;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- float脱离文档流，空间释放
+        塌陷 子元素浮动，父元素没有高度
+        1.给父元素高度
+        2.父元素overflow:hidden
+    -->
+    <div id="div0" class="clearfix">
+        <div id="div1">1
+            <span class="icon">haha</span>
+        </div>
+        <div id="div2">2</div>
+        <div id="div3">3</div>
+        <!-- <div class="clear"></div> -->
+    </div>
+    <h3>vygbhjnkml,;.yuinmkl,</h3>
+</body>
+
+</html>
