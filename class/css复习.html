@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* id选择器 唯一的 */
+        #aa {
+            background: pink;
+        }
+
+        /* 类选择器 */
+        .bb {
+            background: green;
+        }
+
+        li {
+            color: red;
+            list-style: none;
+            background:purple;
+        }
+        /* 后代选择器 */
+        /* #cc li{
+            background: yellow;
+        } */
+        #cc>li{
+            background: yellow;
+        }
+        #aa,.bb{
+            color:orange;
+        }
+        a:hover{
+            /* color:green; */
+            color:transparent;
+        }
+        #dd{
+             /* background-color:green;
+             background-image: url(sss/0.jpg);
+             background-repeat: no-repeat;
+             background-position: 100px 200px; */
+             height:500px;
+             background: url(sss/0.jpg) no-repeat 100px 200px;
+        }
+        a{
+            text-decoration: none;
+            font-size: 50px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 500;
+            font-style: initial;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="test.css"> -->
+</head>
+
+<body style="height: 2000px;">
+    <!-- 内联样式 -->
+    <!-- <div style="width: 200px;height: 300px;">
+        
+    </div> -->
+    <div id="aa">
+        fgbdvsdx
+    </div>
+
+    <ul>
+        <li class="bb">111</li>
+        <li>222</li>
+        <li class="bb">333</li>
+    </ul>
+    <ul id="cc">
+        <li>111
+            <ul>
+                <li>a</li>
+                <li>b</li>
+            </ul>
+        </li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+
+    <a href="#">emmm</a>
+    <div id="dd">
+
+    </div>
+</body>
+
+</html>
