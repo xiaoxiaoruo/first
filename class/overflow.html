@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 30px;
+            background: red;
+            /* 滚动条 */
+            /* overflow: scroll; */
+            /* 文本溢出隐藏 */
+            overflow: hidden;   
+            line-height: 30px;
+            /* 文本溢出显示 '...' */
+            text-overflow: ellipsis;
+            /* 强制显示在一行 不换行 */
+            white-space: nowrap;
+        }
+        #div2{
+            width: 200px;
+            height: 30px;
+            background: green;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: pre;
+            line-height: 30px;
+        }
+    </style>
+    <!-- 
+        文本溢出。。。
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+     -->
+</head>
+<body>
+    <div id="div1">
+        yuk   jgyf   hgdfsd  autjyfhtdgvs  darhtdgrsfeaamy  gbfngbdvscxf  gbdvsdzxfngbdvdzx
+    </div>
+    <div id="div2">
+        xfcgvjhbjknlkm;l xfchgvjhbklnkm;l cvhjbkjnlkm;
+    </div>
+</body>
+</html>
