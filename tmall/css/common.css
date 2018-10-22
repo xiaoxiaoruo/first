@@ -19,6 +19,7 @@ body{
 a{
     text-decoration: none;
 }
+
 /* banner结束 */
 /* .banner1{
     display: block;
@@ -32,6 +33,7 @@ a{
     height: 40px;
     background: #f2f2f2;
     border-bottom-color:transparent !important;
+    border-bottom: 1px solid #e5e5e5;
     box-shadow: 0 2px 4px 0px rgba(0,0,0,0.3);
 }
 /* header结束 */
@@ -73,11 +75,91 @@ a{
 .header-list a:hover{
     color:#ff0036;
 }
-.icon-03f{
+.icon-gouwuche{
     color:#ff0036;
     font-size: 12px;
 }
 .icon-shouji{
     color:#ff0036;
     font-size:12px;
+}
+.icon-wangzhandaohang{
+    color:#ff0036;
+    font-size:12px;
+}
+#header1{
+    height: 130px;
+    background: #fff;
+}
+.headerLayout{
+    width: 290px;
+    height: 130px;
+    position: absolute;
+}
+.header-extra{
+    width: 1230px;
+    height: 106px;
+    margin:0 auto;
+    margin-top:0px;
+}
+#mallSearch{
+    width: 625px;
+    padding-top:38px;
+    margin:0 auto;
+    text-align:center;
+}
+#mallSearch #mallSearch-Input{
+    position: relative;
+}
+#mallSearch #mallSearch-Input form{
+    border-width: 2px 0px 2px 2px;
+    border:solid #ff0036;
+    height: 36px;
+}
+#mallSearch-Input #mq{
+    height: 36px;
+    width: 491px;
+    font: 16px/22px arial;
+    box-sizing: border-box;
+    background: none;
+    border:none;
+    padding:5px 3px 5px 5px;
+    position: absolute;
+    left:0px;
+}
+#mallSearch-Input button{
+    width: 132px;
+    height: 42px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    background:#ff0036;
+    position: absolute;
+    right:0px;
+    top:0px;
+    color:#fff;
+    cursor: pointer;
+    border:1px solid #ff0035;
+}
+#mallSearch #mallSearch-list{
+    height: 42px;
+    width: 625px;
+    text-align: center;
+}
+#mallSearch-list ul{
+    float: right;
+    font-family: "Microsoft YaHei", tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+}
+#mallSearch-list li{
+    float: left;
+    height: 40px;
+    color:#999;
+    line-height: 40px;
+    padding: 0 17.5px 20px;
+}
+#mallSearch-list a{
+    color:#999;
+}
+#mallSearch-list a:hover{
+    color:#ff0036;
 }
