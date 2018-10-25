@@ -35,6 +35,7 @@ a{
     border-bottom-color:transparent !important;
     border-bottom: 1px solid #e5e5e5;
     box-shadow: 0 2px 4px 0px rgba(0,0,0,0.3);
+    position: relative;
 }
 /* header结束 */
 .wrapper{
@@ -94,7 +95,7 @@ a{
 .headerLayout{
     width: 290px;
     height: 130px;
-    position: absolute;
+    float:left;
 }
 .header-extra{
     width: 1230px;
@@ -107,13 +108,14 @@ a{
     padding-top:38px;
     margin:0 auto;
     text-align:center;
+    /* position: relative; */
 }
 #mallSearch #mallSearch-Input{
     position: relative;
 }
 #mallSearch #mallSearch-Input form{
-    border-width: 2px 0px 2px 2px;
-    border:solid #ff0036;
+    /* border-width: 2px 0px 2px 2px; */
+    border:2px solid #ff0036;
     height: 36px;
 }
 #mallSearch-Input #mq{
@@ -126,10 +128,11 @@ a{
     padding:5px 3px 5px 5px;
     position: absolute;
     left:0px;
+    color:#000;
 }
 #mallSearch-Input button{
     width: 132px;
-    height: 42px;
+    height: 40px;
     font-size: 18px;
     font-weight: bold;
     letter-spacing: 5px;
@@ -140,6 +143,8 @@ a{
     color:#fff;
     cursor: pointer;
     border:1px solid #ff0035;
+    display: block;
+    box-sizing: border-box;
 }
 #mallSearch #mallSearch-list{
     height: 42px;
@@ -147,19 +152,20 @@ a{
     text-align: center;
 }
 #mallSearch-list ul{
-    float: right;
-    font-family: "Microsoft YaHei", tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+    /* display: inline-block; */
+    height: 24px;
+    font-size: 14px;
+    padding:4px 0 0 ;
+    width: 100%;
+    margin-left:-13px;
 }
 #mallSearch-list li{
     float: left;
-    height: 40px;
+    border-left:1px solid #ccc;
     color:#999;
-    line-height: 40px;
-    padding: 0 17.5px 20px;
+    line-height: 1.1;
+    padding:0 12px;
 }
 #mallSearch-list a{
     color:#999;
-}
-#mallSearch-list a:hover{
-    color:#ff0036;
 }
