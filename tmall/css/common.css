@@ -70,13 +70,13 @@ a{
     top:0px;
     right: 0px;
 }
-.header-list li{
-    /* float:left; */
+.header-list>li{
+    float:left;
     height: 40px;
     line-height: 32px;
     padding: 0 10px;
     position: relative;
-    display: inline-block;
+    /* display: inline-block; */
 }
 .header-list .separator{
     display: inline-block;
@@ -98,7 +98,7 @@ a{
 .header-list .menu-item{
     padding:0px;
 }
-.header-list .menu-item a{
+.header-list .menu-item>a{
     display: inline-block;
     border:0px 1px #f2f2f2;
     padding:0px 14px 0px 10px;
@@ -108,12 +108,33 @@ a{
     color: #ff0036;
     cursor: pointer;
 }
-.menu-item a{
+.menu-item:hover .sub-sn-menu{
+    display: block;
+}
+.menu-item>a{
     display: inline-block;
     height: 40px;
 }
 .menu-item a:hover{
     text-decoration: underline;
+}
+.sub-sn-menu{
+    background: #fff;
+    border:1px solid #eee;
+    border-top:none;
+    padding:10px 8px;
+    position: absolute;
+    left:0px;
+    top:32px;
+    width: 74px;
+    display: none;
+}
+.sub-sn-menu .sub-menu-item a{
+    color:#666;
+}
+.sub-menu-item{
+    height: 40px;
+    line-height: 20px;
 }
 #navigation:hover{
     text-decoration: none;
