@@ -39,15 +39,18 @@ a{
 }
 /* header结束 */
 .wrapper{
-    height: 40px;
+    height: 32px;
     width: 1230px;
     margin:0 auto;
     font-family: "Microsoft YaHei", tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
+    position: relative;
+    left:-15px;
 }
 .header-login{
-    height: 40px;
-    line-height: 40px;
+    height: 32px;
+    line-height: 32px;
     font: 12px;
+    width: 218px;
     /* display: inline-block; */
     float: left;
 }
@@ -61,18 +64,82 @@ a{
     color:#ff0036;
 }
 .header-list{
-    float: right;
-    /* display: inline-block; */
+    /* float: right; */
+    display: inline-block;
+    position: absolute;
+    top:0px;
+    right: 0px;
 }
 .header-list li{
-    float:left;
+    /* float:left; */
     height: 40px;
-    line-height: 40px;
-    padding: 0 15px 20px;
+    line-height: 32px;
+    padding: 0 10px;
+    position: relative;
+    display: inline-block;
+}
+.header-list .separator{
+    display: inline-block;
+    width: 0;
+    height: 14px;
+    line-height: 14px;
+    vertical-align: top;
+    position: relative;
+    top: 9px;
+    left: 0;
+    font-size: 0;
+    border-left: 1px solid #ccc;
+    margin: 0 2px 0 5px;
+    padding:0px;
 }
 .header-list li a{
     color:#999;
 }
+.header-list .menu-item{
+    padding:0px;
+}
+.header-list .menu-item a{
+    display: inline-block;
+    border:0px 1px #f2f2f2;
+    padding:0px 14px 0px 10px;
+}
+.menu-item:hover{
+    background:#fff;
+    color: #ff0036;
+    cursor: pointer;
+}
+.menu-item a{
+    display: inline-block;
+    height: 40px;
+}
+.menu-item a:hover{
+    text-decoration: underline;
+}
+#navigation:hover{
+    text-decoration: none;
+}
+#navigation{
+    text-decoration: none;
+}
+/*  箭头开始*/
+.sn-menu::after{
+    content:'';
+    height: 0;
+    width: 0;
+    border-width: 3px;
+    border-style: solid dashed dashed;
+    border-color: #bbb transparent transparent;
+    position: absolute;
+    top:15px;
+    right:6px;
+    transform-origin: 3px 1.5px;
+}
+.sn-menu:hover::after{
+    transform:rotate(180deg);
+    /* top:12px; */
+    transition: all 0.2s linear;
+}
+/* 箭头结束 */
 .header-list a:hover{
     color:#ff0036;
 }
@@ -121,7 +188,8 @@ a{
 #mallSearch-Input #mq{
     height: 36px;
     width: 491px;
-    font: 16px/22px arial;
+    /* font: 16px/22px arial; */
+    font-size:14px;
     box-sizing: border-box;
     background: none;
     border:none;
@@ -129,6 +197,19 @@ a{
     position: absolute;
     left:0px;
     color:#000;
+    /* background: 0 0; */
+}
+#mallSearch-Input label{
+    font-size: 14px;
+    line-height: 36px;
+    height: 36px;
+    max-width: 90%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    left:8px;
+    top:0px;
+    cursor: text;
 }
 #mallSearch-Input button{
     width: 132px;
