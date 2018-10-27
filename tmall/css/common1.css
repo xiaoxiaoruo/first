@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font: 12px/1.5 tahoma,arial,"\5b8b\4f53";
+}
+/* 
+    inline/inline-block  水平居中通过设置父元素的text-align:center
+    block  水平居中设置自己的 margin:0 auto;
+*/
+/* banner开始 */
+.banner{
+    text-align: center;
+    background:#ff2f7c;
+}
+.banner img{
+    display: block;
+    margin:0 auto;
+}
+.banner1{
+    display: block;
+    height: 80px;
+    background:#ff2f7c url(images/banner.jpg) no-repeat center 0;
+}
+
+/* banner结束 */
+/* header开始 */
+#header{
+    background: #f2f2f2;
+    height: 40px;
+    box-shadow: 0 2px 4px 0px rgba(0,0,0,0.30);
+}
+.wrapper{
+    width: 1230px;
+    /* background: #ff0000; */
+    margin:0 auto;
+}
+.header-login{
+    height: 40px;
+    line-height: 40px;
+    font-size: 12px;
+    float: left;
+}
+.header-login span,.header-login a{
+    color:#999;
+}
+.header-login a{
+    padding-left:20px; 
+}
+.header-login a:hover{
+    color: #FF0036;
+}
+.header-list{
+    float:right;
+}
+.header-list li{
+   
+    float:left;
+}
+.header-list li>a{
+    color: #999;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px 0 20px;
+}
+.icon-gouwuche,.icon-shouji{
+    color:#ff0036;
+    font-size: 14px;
+}
+/* .list-menu>a:hover{
+    background: #fff;
+    text-decoration: underline;
+    color: #ff0036;
+} */
+.header-list .list-menu{
+    position: relative;
+}
+.list-menu:hover > a{
+    background: #fff;
+    text-decoration: underline;
+    color: #ff0036;
+}
+.arrow{
+    width: 0;
+    height: 0;
+    border:3px solid transparent;
+    border-top-color:#999;
+    position: absolute;
+    right:7px;
+    top:20px;
+    transition: transform 0.2s ease ;
+}
+.header-list .list-menu:hover .arrow{
+    transform: rotate(180deg);
+    transform-origin: 50% 25%;
+}
+.list-menu-no:hover > a{
+    color: #999;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*header结束 */
