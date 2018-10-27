@@ -103,6 +103,11 @@ a{
     border:1px solid #f2f2f2;
     border-top:none;
     padding:0px 14px 0px 10px;
+    /* height: 40px; */
+}
+.menu-item a{
+    display: inline-block;
+    height: 40px;
 }
 li.menu-item>a:hover{
     text-decoration: underline;
@@ -115,9 +120,8 @@ li.menu-item:hover>a{
 .menu-item:hover .sub-sn-menu{
     display: block;
 }
-.menu-item>a{
-    display: inline-block;
-    height: 40px;
+.menu-item .sub-sn-menu .sub-menu-item>a:hover{
+    text-decoration: underline;
 }
 .sub-sn-menu{
     background: #fff;
@@ -160,6 +164,7 @@ li.menu-item:hover>a{
 }
 /* 收藏夹结束 */
 
+/* 二维码开始 */
 /* 手机版开始 */
 .sub-qr{
     position: absolute;
@@ -183,40 +188,70 @@ li.menu-item:hover>a{
 .header-list .tel:hover .sub-qr{
     display: block;
 }
-/* 手机版二维码 */
-
+/* 二维码结束 */
 /* 手机版结束 */
+
 /* 商家支持开始 */
 .sub-sn-menu2{
     background: #fff;
     border:1px solid #eee;
     border-top:none;
-    padding:10px 8px;
+    padding:8px 10px;
     position: absolute;
-    left:0px;
+    right:0px;
     top:32px;
-    width: 120px;
+    left:auto;
+    width: 122px;
     display: none;
     z-index: 9999;
-    float: right;
+    overflow: hidden;
 }
 .menu-item:hover .sub-sn-menu2{
     display: block;
 }
-.sub-menu1-merchant{
+.sub-menu2-merchant{
+    /* height: 40px; */
+    width: 122px;
+    padding: 0px 0px 0px 5px;
+    height: auto;
+    line-height: 22px;
+    border-bottom: 1px dotted #827777;
+    margin-right: 20px;
+    /* margin-top:-10px; */
+    /* float:left; */
+    display: inline-block;
+    position: relative;
+    top:-9px;
+}
+.menu-item .sub-sn-menu2 h3{
+    color:#666;
+    font-weight: 700;
+    font-size:100%;
+    margin-left:5px;
+    /* position: relative; */
+}
+.menu-item .sub-sn-menu2 .sub-menu2-merchant a{
+    display: inline-block;
+    color:#666;
     height: 40px;
-    line-height: 20px;
-    width: 148px;
+    width: 48px;
+    line-height: 22px;
+    margin-right: 11px;
+    /* text-align: center; */
+}
+.menu-item .sub-sn-menu2 .sub-menu2-merchant a:hover{
+    color:#ff0036;
+    text-decoration: underline;
 }
 /* 商家支持结束 */
-.sub-sn-menu .sub-menu-item a{
+/* .sub-sn-menu .sub-menu-item a{
     color:#666;
 }
 .sub-menu-item{
     height: 40px;
     line-height: 20px;
     float:left;
-}
+} */
 #navigation:hover{
     text-decoration: none;
 }
