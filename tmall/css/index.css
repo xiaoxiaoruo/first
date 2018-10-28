@@ -1,0 +1,324 @@
+#header1{
+    height: 130px;
+    background: #fff;
+}
+.headerLayout{
+    width: 290px;
+    height: 130px;
+    float:left;
+    margin-left:15px;
+}
+.header-extra{
+    width: 1230px;
+    height: 106px;
+    margin:0 auto;
+    margin-top:15px;
+}
+#mallSearch{
+    width: 625px;
+    padding-top:38px;
+    margin:0 auto;
+    text-align:center;
+    /* position: relative; */
+}
+#mallSearch #mallSearch-Input{
+    position: relative;
+    margin-bottom: 2px;
+}
+#mallSearch #mallSearch-Input form{
+    border:2px solid #ff0036;
+    height: 36px;
+}
+#mallSearch-Input #mq{
+    height: 36px;
+    width: 491px;
+    box-sizing: border-box;
+    background: none;
+    border:none;
+    padding:5px 3px 5px 8px;
+    position: absolute;
+    left:0px;
+    outline:none;
+    color: #000;
+    font: 14px/1.5 tahoma,arial,"\5b8b\4f53";
+}
+/* #mallSearch-Input label{
+    font-size: 14px;
+    line-height: 36px;
+    height: 36px;
+    max-width: 90%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: absolute;
+    left:8px;
+    top:0px;
+    cursor: text;
+} */
+#mallSearch-Input button{
+    width: 132px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    background:#ff0036;
+    position: absolute;
+    right:0px;
+    top:0px;
+    color:#fff;
+    cursor: pointer;
+    border:1px solid #ff0035;
+    display: block;
+    box-sizing: border-box;
+}
+/* 列表开始 */
+#mallSearch #mallSearch-list{
+    height: 42px;
+    width: 625px;
+    text-align: center;
+}
+#mallSearch-list ul{
+    /* display: inline-block; */
+    height: 24px;
+    font-size: 14px;
+    padding:4px 0 0 ;
+    width: 100%;
+    margin-left:-13px;
+}
+#mallSearch-list li{
+    float: left;
+    border-left:1px solid #ccc;
+    color:#999;
+    line-height: 1.1;
+    padding:0 12px;
+}
+#mallSearch-list a{
+    color:#999;
+}
+/* 列表结束 */
+/* 水平分类 */
+.inner-cont{
+    width: 1030px;
+    height: 35px;
+    line-height:35px;
+    margin: 0 auto;
+    padding-left:200px;
+}
+.inner-cont img{
+    width: 100px;
+    height: 30px;
+    margin-top:2px;
+}
+.inner-cont a{
+    font-size:16px;
+    font-weight: 500;
+    color:#333;
+    float:left;
+    margin:0 8px; 
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.inner-cont a:hover{
+    color:#ff0036;
+}
+/* 主内容区域 */
+.content{
+    height: 1000px;
+    background:url(../image/bg.jpg) center -207px no-repeat; 
+}
+.slide-content{
+    width:1230px;
+    height:500px;
+    margin: 0 auto;
+}
+.categroy{
+    width: 200px;
+    position: relative;
+    top:-36px;
+}
+.cate-title{
+    height: 36px;
+    /* line-height: 36px; */
+    color:#fff;
+    background: #ff0036;
+    padding-left:12px;
+}
+.main-cate-box{
+    background: rgba(0, 0, 0, 0.55);
+}
+.categroy .main-cate{
+    height: 31px;
+    line-height: 31px;
+    padding:0 8px;
+}
+.main-cate>a{
+    color:#fff;
+    font-size:14px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.main-cate>span{
+    color:#fff;
+}
+.main-cate:hover{
+    background-color: #fff;
+    color:#ff0036;
+}
+.main-cate-box i{
+    color:#ccc;
+}
+
+.categroy .main-cate:nth-child(1):hover>a{
+    color:#e54077;
+}
+.categroy .main-cate:nth-child(1):hover>i{
+    color:#e54077;
+}
+.categroy .main-cate:nth-child(1):hover>span{
+    color:#e54077;
+}
+
+.categroy .main-cate:nth-child(2):hover>a{
+    color:#e54077;
+}
+.categroy .main-cate:nth-child(2):hover>span{
+    color:#e54077;
+}
+.categroy .main-cate:nth-child(2):hover>i{
+    color:#e54077;
+}
+
+.categroy .main-cate:nth-child(3):hover>a{
+    color:#6347cd;
+}
+.categroy .main-cate:nth-child(3):hover>span{
+    color:#6347cd;
+}
+.categroy .main-cate:nth-child(3):hover>i{
+    color:#6347cd;
+}
+
+.categroy .main-cate:nth-child(4):hover>a{
+    color:#e54077;
+}
+.categroy .main-cate:nth-child(4):hover>span{
+    color:#e54077;
+}
+.categroy .main-cate:nth-child(4):hover>i{
+    color:#e54077;
+}
+
+.categroy .main-cate:nth-child(5):hover>a{
+    color:#6347cd;
+}
+.categroy .main-cate:nth-child(5):hover>span{
+    color:#6347cd;
+}
+.categroy .main-cate:nth-child(5):hover>i{
+    color:#6347cd;
+}
+
+.categroy .main-cate:nth-child(6):hover>a{
+    color:#e54077;
+}
+.categroy .main-cate:nth-child(6):hover>span{
+    color:#e54077;
+}
+.categroy .main-cate:nth-child(6):hover>i{
+    color:#e54077;
+}
+
+.categroy .main-cate:nth-child(7):hover>a{
+    color:#e54077;
+}
+.categroy .main-cate:nth-child(7):hover>span{
+    color:#e54077;
+}
+.categroy .main-cate:nth-child(7):hover>i{
+    color:#e54077;
+}
+
+.categroy .main-cate:nth-child(8):hover>a{
+    color:#fa5c5c;
+}
+.categroy .main-cate:nth-child(8):hover>span{
+    color:#fa5c5c;
+}
+.categroy .main-cate:nth-child(8):hover>i{
+    color:#fa5c5c;
+}
+
+.categroy .main-cate:nth-child(9):hover>a{
+    color:#f7a831;
+}
+.categroy .main-cate:nth-child(9):hover>span{
+    color:#f7a831;
+}
+.categroy .main-cate:nth-child(9):hover>i{
+    color:#f7a831;
+}
+
+.categroy .main-cate:nth-child(10):hover>a{
+    color:#427def;
+}
+.categroy .main-cate:nth-child(10):hover>span{
+    color:#427def;
+}
+.categroy .main-cate:nth-child(10):hover>i{
+    color:#427def;
+}
+
+.categroy .main-cate:nth-child(11):hover>a{
+    color:#dd2727;
+}
+.categroy .main-cate:nth-child(11):hover>span{
+    color:#dd2727;
+}
+.categroy .main-cate:nth-child(11):hover>i{
+    color:#dd2727;
+}
+
+.categroy .main-cate:nth-child(12):hover>a{
+    color:#e54077;
+}
+.categroy .main-cate:nth-child(12):hover>span{
+    color:#e54077;
+}
+.categroy .main-cate:nth-child(12):hover>i{
+    color:#e54077;
+}
+.categroy .main-cate:nth-child(13):hover>a{
+    color:#f7a831;
+}
+.categroy .main-cate:nth-child(13):hover>span{
+    color:#f7a831;
+}
+.categroy .main-cate:nth-child(13):hover>i{
+    color:#f7a831;
+}
+.categroy .main-cate:nth-child(14):hover>a{
+    color:#3bc7b0;
+}
+.categroy .main-cate:nth-child(14):hover>span{
+    color:#3bc7b0;
+}
+.categroy .main-cate:nth-child(14):hover>i{
+    color:#3bc7b0;
+}
+.categroy .main-cate:nth-child(15):hover>a{
+    color:#e54077;
+}
+.categroy .main-cate:nth-child(15):hover>span{
+    color:#e54077;
+}
+.categroy .main-cate:nth-child(15):hover>i{
+    color:#e54077;
+}
+.categroy .main-cate:nth-child(16):hover>a{
+    color:#e54077;
+}
+.categroy .main-cate:nth-child(16):hover>span{
+    color:#e54077;
+}
+.categroy .main-cate:nth-child(16):hover>i{
+    color:#e54077;
+}
+
+

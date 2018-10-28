@@ -19,6 +19,11 @@ body{
 a{
     text-decoration: none;
 }
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
 
 /* banner结束 */
 /* .banner1{
@@ -105,7 +110,7 @@ a{
     padding:0px 14px 0px 10px;
     /* height: 40px; */
 }
-.menu-item a{
+.menu-item>a{
     display: inline-block;
     height: 40px;
 }
@@ -116,12 +121,19 @@ li.menu-item:hover>a{
     color: #ff0036;
     background: #fff;
 }
+/* 我的淘宝和收藏夹公用 */
+.sub-menu-item>a:hover{
+    text-decoration: underline;
+}
+.sub-menu-item{
+    height: 40px;
+    line-height: 20px;
+    float:left;
+} 
+/* 我的淘宝和收藏夹公用 */
 /* 我的淘宝开始 */
 .menu-item:hover .sub-sn-menu{
     display: block;
-}
-.menu-item .sub-sn-menu .sub-menu-item>a:hover{
-    text-decoration: underline;
 }
 .sub-sn-menu{
     background: #fff;
@@ -142,10 +154,6 @@ li.menu-item:hover>a{
 .menu-item:hover .sub-sn-menu1{
     display: block;
 }
-.menu-item>a{
-    display: inline-block;
-    height: 40px;
-}
 /* .menu-item a:hover{
     text-decoration: underline;
 } */
@@ -162,6 +170,9 @@ li.menu-item:hover>a{
     z-index: 9999;
     float: right;
 }
+/* .menu-item .sub-sn-menu1 .sub-menu-item>a:hover{
+    text-decoration: underline;
+} */
 /* 收藏夹结束 */
 
 /* 二维码开始 */
@@ -202,9 +213,8 @@ li.menu-item:hover>a{
     top:32px;
     left:auto;
     width: 122px;
-    display: none;
     z-index: 9999;
-    overflow: hidden;
+    display: none;
 }
 .menu-item:hover .sub-sn-menu2{
     display: block;
@@ -217,11 +227,8 @@ li.menu-item:hover>a{
     line-height: 22px;
     border-bottom: 1px dotted #827777;
     margin-right: 20px;
-    /* margin-top:-10px; */
-    /* float:left; */
-    display: inline-block;
     position: relative;
-    top:-9px;
+    top:-8px;
 }
 .menu-item .sub-sn-menu2 h3{
     color:#666;
@@ -237,21 +244,12 @@ li.menu-item:hover>a{
     width: 48px;
     line-height: 22px;
     margin-right: 11px;
-    /* text-align: center; */
 }
 .menu-item .sub-sn-menu2 .sub-menu2-merchant a:hover{
     color:#ff0036;
     text-decoration: underline;
 }
 /* 商家支持结束 */
-/* .sub-sn-menu .sub-menu-item a{
-    color:#666;
-}
-.sub-menu-item{
-    height: 40px;
-    line-height: 20px;
-    float:left;
-} */
 #navigation:hover{
     text-decoration: none;
 }
@@ -291,101 +289,4 @@ li.menu-item:hover>a{
 .icon-wangzhandaohang{
     color:#ff0036;
     font-size:12px;
-}
-#header1{
-    height: 130px;
-    background: #fff;
-}
-.headerLayout{
-    width: 290px;
-    height: 130px;
-    float:left;
-}
-.header-extra{
-    width: 1230px;
-    height: 106px;
-    margin:0 auto;
-    margin-top:0px;
-}
-#mallSearch{
-    width: 625px;
-    padding-top:38px;
-    margin:0 auto;
-    text-align:center;
-    /* position: relative; */
-}
-#mallSearch #mallSearch-Input{
-    position: relative;
-    margin-bottom: 2px;
-}
-#mallSearch #mallSearch-Input form{
-    /* border-width: 2px 0px 2px 2px; */
-    border:2px solid #ff0036;
-    height: 36px;
-}
-#mallSearch-Input #mq{
-    height: 36px;
-    width: 491px;
-    /* font: 16px/22px arial; */
-    font-size:14px;
-    box-sizing: border-box;
-    background: none;
-    border:none;
-    padding:5px 3px 5px 5px;
-    position: absolute;
-    left:0px;
-    /* color:#000; */
-    outline:none;
-    /* background: 0 0; */
-}
-#mallSearch-Input label{
-    font-size: 14px;
-    line-height: 36px;
-    height: 36px;
-    max-width: 90%;
-    overflow: hidden;
-    white-space: nowrap;
-    position: absolute;
-    left:8px;
-    top:0px;
-    cursor: text;
-}
-#mallSearch-Input button{
-    width: 132px;
-    height: 40px;
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: 5px;
-    background:#ff0036;
-    position: absolute;
-    right:0px;
-    top:0px;
-    color:#fff;
-    cursor: pointer;
-    border:1px solid #ff0035;
-    display: block;
-    box-sizing: border-box;
-}
-#mallSearch #mallSearch-list{
-    height: 42px;
-    width: 625px;
-    text-align: center;
-}
-#mallSearch-list ul{
-    /* display: inline-block; */
-    height: 24px;
-    font-size: 14px;
-    padding:4px 0 0 ;
-    width: 100%;
-    margin-left:-13px;
-}
-#mallSearch-list li{
-    float: left;
-    border-left:1px solid #ccc;
-    color:#999;
-    line-height: 1.1;
-    padding:0 12px;
-}
-#mallSearch-list a{
-    color:#999;
 }
