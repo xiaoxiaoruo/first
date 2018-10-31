@@ -12,7 +12,7 @@
     width: 1230px;
     height: 106px;
     margin:0 auto;
-    margin-top:15px;
+    margin-top:4px;
 }
 #mallSearch{
     width: 625px;
@@ -132,7 +132,7 @@
 .categroy{
     width: 200px;
     position: relative;
-    top:-36px;
+    top:-34px;
 }
 .cate-title{
     height: 36px;
@@ -142,12 +142,16 @@
     padding-left:12px;
 }
 .main-cate-box{
+    height: 500px;
     background: rgba(0, 0, 0, 0.55);
 }
 .categroy .main-cate{
     height: 31px;
     line-height: 31px;
     padding:0 8px;
+}
+.categroy .main-cate:hover>.information{
+    display: block;
 }
 .main-cate>a{
     color:#fff;
@@ -320,5 +324,92 @@
 .categroy .main-cate:nth-child(16):hover>i{
     color:#e54077;
 }
-
-
+/* 分类整体 */
+.information{
+    height: 500px;
+    width: 852px;
+    background: white;
+    position: absolute;
+    top:36px;
+    left:200px;
+    /* overflow: hidden; */
+    display: none;
+}
+/* 分类标题 */
+.hot-word-line{
+    width: 603px;
+}
+.hot-word-line .line-title{
+    height: 200px;
+    width: 60px;
+    color: #333;
+    margin-right: 50px;
+    position: relative;
+    top:20px;
+    left:30px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    height: 22px;
+    float: left;
+    white-space: nowrap;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.hot-word-line .line-title>h5{
+    white-space: pre;
+}
+/* 具体分类 */
+.line-list{
+    float:left;
+    width: 493px;
+    color:#999;
+    font-size:12px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    margin-top:20px;
+    margin-bottom: -10px;
+    border-bottom: 1px dashed rgba(0,0,0,.1);
+    padding-bottom: 10px;
+}
+.line-list>a{
+    height: 22px;
+    line-height: 22px;
+    font-size: 14px;
+    color: #666;
+    float: left;
+    margin-left: 13px;
+}
+/* 第一个分类颜色 */
+.change1 a:hover{
+    color:#e54077;
+}
+.line-list .special1{
+    color:#e54077;
+}
+/* 第二个分类颜色 */
+.change2 a:hover{
+    color:#e54077;
+}
+.line-list .special2{
+    color:#e54077;
+}
+/* 第三个分类颜色 */
+.change3 :hover{
+    color:#6347cd;
+}
+.line-list .special3{
+    color:#6347cd;
+}
+/* 第四个颜色分类 */
+.change4 :hover{
+    color:#e54077;
+}
+.line-list .special4{
+    color:#e54077;
+}
+/* 第五个颜色分类 */
+.chang5 :hover{
+    color:#6347cd;
+}
+.line-list .special5{
+    color:#6347cd;
+}
