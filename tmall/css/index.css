@@ -413,3 +413,272 @@
 .line-list .special5{
     color:#6347cd;
 }
+/* 下部分 */
+.page-list{
+    width: 1240px;
+    height: 435px;
+    margin: 0 auto;
+}
+/* 中间的链接 */
+.page-title{
+    display: block;
+    height: 105px;
+    background: url(../image/guanggao.png) center no-repeat;
+    background-size:300px 65px; 
+    text-indent: -1000em;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+/* 三个小部分 */
+.group-a{
+    display: block;
+}
+.group-wrapper{
+    position: relative;
+    float: left;
+    width: 610px;
+    height: 330px;
+    margin-right: 10px;
+    }
+/* 左侧第一个开始 */
+.Lfirst-page{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 330px;
+    margin: 0;
+    color:#ff7200;
+    background-image: url(../image/1bg.png);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+.Lfirst-page .first-p{
+    text-align: center;
+    margin: 0px;
+    padding-top: 32px;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.Lfirst-page .second-p{
+    text-align: center;
+    padding:0 5px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    font-size:18px;
+}
+.Lfirst-page .first-img2{
+    position: relative;
+    margin: 20px auto 0;
+    width: 180px;
+    height: 180px;
+    display: block;
+}
+.Lfirst-page .first-img1{
+    position: absolute;
+    top:0px;
+    left:0px;
+    display: block;
+}
+/* 左侧第一个结束 */
+/* 左侧第二个开始 */
+.Lsecond-page{
+    color: #e30c62;
+    position: relative;
+    display: block;
+    background: #fff;
+    width: 350px;
+    height: 160px;
+    margin: 0 0 10px 260px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    background-image:url(../image/2bg.png); 
+}
+.Lsecond-page .first-p{
+    position: absolute;
+    margin-left: 30px;
+    padding-top: 27px;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.Lsecond-page .second-p{
+    width: 150px;
+    padding:0 30px;
+    font-size: 18px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    position: absolute;
+    top:63px;
+}
+.Lsecond-page .second-img2{
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    margin: 0;
+    display: block;
+}
+.Lsecond-page .second-img1{
+    position: absolute;
+    top:0px;
+    right: 0px;
+}
+/* 左侧第二个结束 */
+/* 左侧第三个开始 */
+.Lthird-page{
+    color: #e6010c;
+    background-image:url(../image/3bg.png); 
+    position: relative;
+    display: block;
+    width: 350px;
+    height: 160px;
+    margin: 0 0 10px 260px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.Lthird-page .first-p{
+    display: block;
+    margin-left: 30px;
+    padding-top: 27px;
+    font-size: 24px;
+    font-weight: 700;
+}
+.Lthird-page .second-p{
+    padding: 0 30px;
+    font-size: 18px;
+}
+.Lthird-page .third-img2{
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    margin: 0;
+}
+.Lthird-page .third-img1{
+    position: absolute;
+    top:0px;
+    right: 0px;
+}
+/* 左侧第三个结束 */
+/* 右侧第一个开始 */
+.Rfirst-page{
+    color: #1d39e1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 330px;
+    margin: 0;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    background-image:url(../image/4bg.png);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+}
+.Rfirst-page .first-p{
+    padding-top:32px;
+    text-align: center;
+    display: block;
+    font-size:24px;
+    font-weight: 700px;
+}
+.Rfirst-page .second-p{
+    padding: 0 5px;
+    text-align: center;
+    font-size: 18px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.Rfirst-page .four-img2{
+    position: relative;
+    margin: 20px auto 0;
+    width: 180px;
+    height: 180px;
+    display: block;
+}
+.Rfirst-page .four-img1{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+}
+/* 右侧第一个结束 */
+/* 右侧第二个开始 */
+.Rsecond-page{
+    color: #00816a;
+    background-image:url(../image/5bg.png); 
+    box-shadow: 5px 5px 10px rgba(0,0,0,.2);
+    position: relative;
+    display: block;
+    width: 350px;
+    height: 160px;
+    margin: 0 0 10px 260px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.Rsecond-page .first-p{
+    display: block;
+    margin-left: 30px;
+    padding-top: 27px;
+    font-size: 24px;
+    font-weight: 700;
+    position: absolute;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.Rsecond-page .second-p{
+    padding: 0 5px;
+    font-size: 18px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    position: absolute;
+    top:63px;
+    left:25px;
+}
+.Rsecond-page .five-img2{
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    margin: 0;
+    display: block;
+}
+.Rsecond-page .five-img1{
+    position: absolute;
+}
+/* 右侧第二个结束 */
+/* 右侧第三个开始 */
+.Rthird-page{
+    color: #835600;
+    background-image:url(../image/6bg.png);
+    box-shadow: 5px 5px 10px rgba(0,0,0,.2);
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+    position: relative;
+    display: block;
+    width: 350px;
+    height: 160px;
+    margin: 0 0 10px 260px;
+}
+.Rthird-page .first-p{
+    display: block;
+    margin-left: 30px;
+    padding-top: 27px;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.Rthird-page .second-p{
+    padding: 0 5px;
+    font-size: 18px;
+    margin-left: 25px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.Rthird-page .six-img2{
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    margin: 0;
+}
+.Rthird-page .six-img1{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+}
+/* 右侧第三个结束 */
