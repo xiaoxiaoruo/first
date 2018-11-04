@@ -44,12 +44,12 @@ a{
 }
 /* header结束 */
 .wrapper{
-    height: 32px;
+    /* height: 32px; */
     width: 1230px;
     margin:0 auto;
     font-family: "Microsoft YaHei", tahoma, arial, 'Hiragino Sans GB', '\5b8b\4f53', sans-serif;
-    position: relative;
-    left:-15px;
+    /* position: relative; */
+    /* left:-15px; */
 }
 .header-login{
     height: 32px;

@@ -102,6 +102,7 @@
     line-height:35px;
     margin: 0 auto;
     padding-left:200px;
+    /* border-bottom: 2px solid #ff0036; */
 }
 .inner-cont img{
     width: 100px;
@@ -122,17 +123,22 @@
 /* 主内容区域 */
 .content{
     height: 1000px;
-    background:url(../image/bg.jpg) center -207px no-repeat; 
+    background:url(../image/bg.jpg) center -207px no-repeat;
+    background-color:gray; 
+    position: relative;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif; 
 }
 .slide-content{
     width:1230px;
     height:500px;
     margin: 0 auto;
+    position: relative;
 }
 .categroy{
     width: 200px;
-    position: relative;
+    position: absolute;
     top:-34px;
+    z-index: 2;
 }
 .cate-title{
     height: 36px;
@@ -144,6 +150,9 @@
 .main-cate-box{
     height: 500px;
     background: rgba(0, 0, 0, 0.55);
+}
+.categroy .main-cate:last-child{
+    height: 33px;
 }
 .categroy .main-cate{
     height: 31px;
@@ -335,9 +344,10 @@
     /* overflow: hidden; */
     display: none;
 }
-/* 分类标题 */
+/* 分类标题(左侧) */
 .hot-word-line{
     width: 603px;
+    float: left;
 }
 .hot-word-line .line-title{
     height: 200px;
@@ -357,6 +367,36 @@
 }
 .hot-word-line .line-title>h5{
     white-space: pre;
+}
+.hot-word-line .space1{
+    letter-spacing: 1px;
+}
+.hot-word-line .space2{
+    letter-spacing:9px;
+}
+/* 右侧 */
+.categroy .main-cate .information .right-list{
+    float: right;
+    background-color: #FAFAFA;
+    width: 189px;
+    padding: 10px;
+    height: 480px;
+}
+.right-list .right-list-top a{
+    display: block;
+    float: left;
+    width: 73px;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    height: 37px;
+    padding: 5px 10px;
+    overflow: hidden;
+    background-color: #fff;
+}
+.right-list .right-list-top img{
+    width: 73px;
+    display: block;
+    margin: 0 auto;
 }
 /* 具体分类 */
 .line-list{
@@ -413,6 +453,45 @@
 .line-list .special5{
     color:#6347cd;
 }
+/* 轮播图开始 */
+.slide-img-box img{
+    width: 1230px;
+    display: block;
+    height: 500px;
+}
+.slide-box{
+    position: relative;
+    height: 500px;
+}
+.slide-box a{
+    position: absolute;
+    left:0px;
+    top:0px;
+    /* z-index:-1; */
+}
+.slide-btn-box{
+    position: absolute;
+    bottom:25px;
+    left:50%;
+    width:210px;
+    /* 已知宽度 */
+    /* margin-left:-100px; */
+    /* 不知道宽度  css3 transform: translateX(-50%); */
+    transform: translateX(-50%);
+}
+.slide-btn-box li{
+    height: 5px;
+    width: 25px;
+    /* background: #ccc; */
+    background:rgba(0, 0, 0, 0.30);
+    margin-right: 10px;
+    float:left;
+    cursor: pointer;
+}
+.slide-btn-box li:hover{
+    background: #fff;
+}
+/* 轮播图结束 */
 /* 下部分 */
 .page-list{
     width: 1240px;
@@ -682,3 +761,75 @@
     left: 0;
 }
 /* 右侧第三个结束 */
+
+/* 中间三个开始 */
+.brandWall{
+    margin:auto;
+    padding-top:24px;
+    width: 1230px;
+    height: 370px;
+    padding-right: 30px;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+/* 中间三个结束 */
+/* 品牌闪购开始 */
+.brandWall .brandWall-item1{
+    width: 234px;
+    float:left;
+    display: block;
+    height: 370px;
+    margin-right: 13px;
+    background-color: #fff;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.brandWall .top{
+    height: 54px;
+    background: #fff;
+    position: relative;
+    font-family: "Microsoft YaHei",SimSun,'\5b8b\4f53',sans-serif;
+}
+.brandWall .top .cn{
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    line-height: 54px;
+    height: 18px;
+    margin-left: 10px;
+}
+.brandWall .top .en{
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    margin-left: 10px;
+    line-height: 24px;
+    height: 44px;
+}
+.brandWall .top .more{
+    text-indent: -99px;
+    position: absolute;
+    right: 14px;
+    top: 0;
+    width: 42px;
+    height: 54px;
+    line-height: 54px;
+    z-index: 99;
+    background-size: 18px 18px;
+    background-image: url(../image/jiantou.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 14px;
+    font-size: 16px;
+    color: #666;
+    overflow: hidden;
+}
+.brandWall .bottom .body{
+    display: block;
+    height: 316px;
+}
+.brandWall .bottom .body img{
+    height: 316px;
+    width: 100%;
+}
+/* 品牌闪购结束 */
