@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            /* 谷歌 */
+            -webkit-transform: scale(30deg);
+            /* 火狐 */
+            -moz-transform: scale(30deg);
+            /* opera */
+            -o-transform: scale(30deg);
+            /* IE */
+            -ms-transform: scale(30deg);
+
+            transform: scale(30deg);
+        }
+        /* 兄弟选择器 紧邻的第一个兄弟 */
+        h1 + p{
+            background:#f00;
+        }
+        /* h1的所有兄弟 */
+        h1 ~ p{
+            background: yellow;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <h1>111</h1>
+        <p>222</p>
+        <p>333</p>
+        <p>444</p>
+    </div>
+</body>
+</html>
