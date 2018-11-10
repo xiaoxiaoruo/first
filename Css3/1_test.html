@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        div{
+        div {
             /* 谷歌 */
             -webkit-transform: scale(30deg);
             /* 火狐 */
@@ -18,17 +19,98 @@
 
             transform: scale(30deg);
         }
+
         /* 兄弟选择器 紧邻的第一个兄弟 */
-        h1 + p{
-            background:#f00;
+        h1+p {
+            background: #f00;
         }
+
         /* h1的所有兄弟 */
-        h1 ~ p{
+        h1~p {
             background: yellow;
         }
+
+        /* 
+            E[att] 
+            带有[att] att属性的E元素 
+        */
+        /* div[class]{
+            background: #000;
+        } */
+        /* 
+            E[att="val"] 
+            属性这=val 的 E元素
+        */
+        /* div[class="div1"]{
+            background: red;
+        } */
+        /* 
+            E[att~="val"] 
+            选择具有att属性且属性值为一用空格分隔的字词列表，其中一个等于val的E元素（包含只有一个值且该值等于val的情况）。
+            att里的多个值含有 val
+        */
+        /* div[class~="div1"]{
+            background: blue;
+        } */
+        /* 
+            E[att^="val"]
+            选中以什么开头的E元素 
+        */
+        /* div[class^="d"]{
+            background: green;
+        } */
+        /* 
+            E[att$="val"]
+            选中以val结尾的E元素
+        */
+        /* div[class$="1"]{
+            background: #f00;
+        } */
+        /* 
+            E[att*="[val] 
+            选择具有att属性且属性值为包含val字符串的E元素
+        */
+        /* div[class*="i"]{
+            background: #ff0036;
+        } */
+        /* 
+            E[att|="val"]
+            选择具有att属性，其值是以val开头并用连接符"-"分隔的字符串的E元素；如果值仅为val，也将被选择。
+            这样理解会更简单：如果元素E拥有att属性，并且值为val，或者值是以val-开头的，那么E将会被选择
+        */
+        /* div[class|="div1"]{
+            background: gray;
+        } */
         
+        /* 
+            E:not(s) 
+            匹配不含有s选择符的元素E
+            ps：s元素好神奇    
+        */
+        li:not(:last-child){
+            background: #000;
+        }
+        /* 
+            E:first-child
+            选择第一个孩子 作用于 "："前的属性 
+        */
+        /* li:first-child{
+            background: red;
+        } */
+        /* 
+            only-child:选择唯一的孩子
+            nth-child(n):选择第几个孩子
+            nth-last-child(n):从后往前选择第几个孩子
+            first-of-type:第一个这种类型
+            last-of-type:最后一个这种类型
+            only-of-type:唯一的这种类型
+            nth-of-type(n):。。。
+            nth-last-of-tpe(n):。。。
+            checked：点击时发生变化 ps：单选那妞，复选那妞。。。
+        */
     </style>
 </head>
+
 <body>
     <div>
         <h1>111</h1>
@@ -36,5 +118,25 @@
         <p>333</p>
         <p>444</p>
     </div>
+
+    <div class="div1">
+        11111
+    </div>
+    <div class="div2">
+        22222
+    </div>
+    <div class="div1 div2">
+        33333
+    </div>
+    <div class="div1-test">
+        44444
+    </div>
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+        <li>44</li>
+    </ul>
 </body>
+
 </html>
