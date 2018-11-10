@@ -1139,7 +1139,7 @@
 /* 中间那两个变换的结束 */
 /* 剩下长得一样的开始 */
 .one-grid-price{
-    width: 236px;
+    width: 235px;
     height: 302px;
     display: block;
     float: left;
@@ -1152,7 +1152,7 @@
 }
 .floor-item-content-wrap{
     padding-top:20px;
-    width: 234px;
+    width: 233px;
     height: 280px;
     border: 1px solid #fff;
     z-index: 999;
