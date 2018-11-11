@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .all{
+            width: 400px;
+            height: 400px;
+            perspective: 800px;
+            margin: 0 auto;
+            background: #000;
+            /* -webkit-animation: run 2s linear infinite ;
+            -webkit-transform-style: preserve-3d; */
+        }
+        .all div{
+            height: 200px;
+            width: 200px;
+            text-align: center; 
+            background: rgba(255, 255, 255, 0.5);
+            position:absolute;
+            /* border:1px solid rgba(0,0,0,0.5); */
+            top:100px;
+            left:100px;
+            margin:0 auto;
+            opacity:0.9;
+            border-radius:10px;
+        }
+        .div1{
+            transform: rotateX(90deg) translateZ(100px);
+        }
+        .div2{
+            transform: translateZ(100px);
+            z-index:1;
+        }
+        .div3{
+            transform: rotateY(90deg) translateZ(100px);
+        }
+        .div4{
+            transform: translateZ(-100px);
+        }
+        .div5{
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .div6{
+            transform: rotateX(-90deg) translateZ(100px);
+        }
+        span{
+            color:black;
+            /* font-weight: 800px; */
+            font-size: 45px;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <div class="div1"><span>1</span></div>
+        <div class="div2"><span>2</span></div>
+        <div class="div3"><span>3</span></div>
+        <div class="div4"><span>4</span></div>
+        <div class="div5"><span>5</span></div>
+        <div class="div6"><span>6</span></div>
+    </div>
+</body>
+</html>

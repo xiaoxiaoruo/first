@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 800px;
+            height: 800px;
+            background: url(ddd.jpg) no-repeat;
+            padding: 50px;
+            border:20px dashed #000;
+            background-origin: border-box;
+            /* 兼容性不好需要加前缀 */
+            -webkit-background-clip:text;
+            /* 
+            background-clip:              
+            border-box：
+            从border区域（含border）开始向外裁剪背景。
+            padding-box：
+            从padding区域（含padding）开始向外裁剪背景。
+            content-box：
+            从content区域开始向外裁剪背景。
+            text：
+            从前景内容的形状（比如文字）作为裁剪区域向外裁剪，如此即可实现使用背景作为填充色之类的遮罩效果  
+            */
+            /* 填充色透明，背景透出来 */
+            -webkit-text-fill-color: transparent;
+            font-size:50px;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+
+    <div>哈哈哈哈</div>
+    
+</body>
+</html>
