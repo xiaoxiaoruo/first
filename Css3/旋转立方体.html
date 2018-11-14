@@ -10,25 +10,36 @@
             margin: 0;
             padding: 0;
         }
+        body{
+            background: #000;
+            /* 相对自己视角变化 */
+            perspective: 800px;
+        }
         .all{
             width: 400px;
             height: 400px;
-            perspective: 800px;
+            /* perspective: 800px; */
             margin: 0 auto;
-            background: #000;
-            /* -webkit-animation: run 2s linear infinite ;
-            -webkit-transform-style: preserve-3d; */
+            transform-origin: 50% 50%; 
+            -webkit-animation: run 2s linear infinite ;
+            -webkit-transform-style: preserve-3d;
+        }
+        @keyframes run{
+            from{transform: rotateY(0);}
+            25%{transform: rotateY(90deg);}
+            50%{transform: rotateY(180deg);}
+            75%{transform: rotateY(270deg);}
+            to{transform: rotateY(360deg);}
         }
         .all div{
             height: 200px;
             width: 200px;
             text-align: center; 
+            /* perspective: 800px; */
             background: rgba(255, 255, 255, 0.5);
             position:absolute;
-            /* border:1px solid rgba(0,0,0,0.5); */
             top:100px;
             left:100px;
-            margin:0 auto;
             opacity:0.9;
             border-radius:10px;
         }
@@ -43,7 +54,7 @@
             transform: rotateY(90deg) translateZ(100px);
         }
         .div4{
-            transform: translateZ(-100px);
+            transform: rotateY(180deg) translateZ(100px);
         }
         .div5{
             transform: rotateY(-90deg) translateZ(100px);
