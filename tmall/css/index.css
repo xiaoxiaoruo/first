@@ -1032,7 +1032,7 @@
 /* 右边一堆开始 */
 .middle-colum-con{
     width: 995px;
-    height: 618px;
+    height: 619px;
     float: left;
     overflow: hidden;
 }
@@ -1047,6 +1047,9 @@
     border-bottom: 15px solid #f5f5f5;
     position: relative;
     background-color: #fff;
+}
+.two-gird:hover{
+    opacity:0.8;
 }
 .floor-tabs{
     width: 462px;
@@ -1119,12 +1122,12 @@
     z-index: 99;
 }
 .title-wrap img{
-    margin-left:26px;
+    margin-left:-65px;
     margin-top:8px;
 }
 .title-wrap-span1{
     margin-top:8px;
-    margin-left:8px;
+    margin-left:5px;
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -1132,7 +1135,7 @@
 }
 .title-wrap-span2{
     display: block;
-    margin-left: 26px;
+    margin-left: -115px;
     font-size: 20px;
     letter-spacing: 1px;
 }
@@ -1184,6 +1187,68 @@
 }
 .one-grid-price:hover img{
     opacity: 0.6;
+}
+.tmall-guoji{
+    margin-top:20px; 
+    width: 100%;
+    height: 665px;
+}
+.tmall-guoji .big-banner a{
+    display: block;
+    width: 235px;
+    height: 301px;
+}
+.tmall-guoji .floor-img{
+    display: inline-block;
+}
+.tmall-guoji .big-banner img{
+    width: 235px;
+    height: 301px;
+}
+.tmall-guoji .big-banner .detail-wrap{
+    width: 100%;
+    height: 60px;
+    position: absolute;
+}
+.tmall-guoji .big-banner .detail-wrap img{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 32px;
+    height: 32px;
+}
+.tmall-guoji .one-grid-price img{
+    margin: 90px 33px 42px 25px;
+}
+.tmall-guoji .one-grid-price .description1{
+    display: block;
+    position: absolute;
+    top:20px;
+    left:-25px;
+    width: 220px;
+    font-size: 18px;
+    z-index: 10;
+    line-height: 24px;
+    height: 24px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color:#000;
+}
+.tmall-guoji .one-grid-price .description2{
+    /* display: block; */
+    position: absolute;
+    top: 49px;
+    left: -35px;
+    width: 220px;
+    font-size: 14px;
+    z-index: 10;
+    line-height: 18px;
+    height: 18px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #7A45E5;
 }
 /* 剩下长得一样的结束 */
 
