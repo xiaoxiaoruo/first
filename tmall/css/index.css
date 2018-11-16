@@ -1217,10 +1217,10 @@
     width: 32px;
     height: 32px;
 }
-.tmall-guoji .one-grid-price img{
+.middle-colum-con .one-grid-price img.firstimg{
     margin: 90px 33px 42px 25px;
 }
-.tmall-guoji .one-grid-price .description1{
+.middle-colum-con .one-grid-price .discription1{
     display: block;
     position: absolute;
     top:20px;
@@ -1235,8 +1235,8 @@
     white-space: nowrap;
     color:#000;
 }
-.tmall-guoji .one-grid-price .description2{
-    /* display: block; */
+.middle-colum-con .one-grid-price .discription2{
+    display: block;
     position: absolute;
     top: 49px;
     left: -35px;
