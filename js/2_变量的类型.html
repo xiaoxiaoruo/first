@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        123456<br>
+        <button id="btn">click</button>
+    </div>
+    <script>
+        var a = 10;
+        var d = 1.5;
+        // 判断类型
+        console.log( typeof a);//"number"
+        console.log( typeof d);//"number"
+        var b = "abc";
+        var e = "123";
+        console.log( typeof b);//"string"
+        console.log( typeof e);//"string"
+        var c = true;
+        console.log( typeof c);//"boolean"
+
+        // var f = 0.4.5;
+        var a = 5,b = 10,c = 6;
+
+        /* js基本数据类型 5钟： number string boolean undefined(定义了没赋值) 
+        document.getElementById('div2') div2找不到
+        null空对象
+        
+        */
+        var g;
+        console.log( typeof g);
+
+        var oDiv = document.getElementById('div2');//null
+        console.log(oDiv);
+        
+        var oDiv1 = document.getElementById('div1');
+        var oBtn = document.getElementById('btn');
+        oBtn.onclick = function(){
+            oDiv1.style.background = "red";
+        }
+
+        
+
+    </script>
+</body>
+</html>

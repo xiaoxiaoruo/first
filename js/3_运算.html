@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var a = "abc";
+        var b = "def";
+        //字符串+ 拼接
+
+        console.log( a + b);
+
+        var c = 12;
+        //c++
+        //先参与运算 再++
+
+        console.log(++c);
+
+        console.log(c);
+
+        //加法就是字符串拼接
+        console.log("abc" + 5); //"abc5"
+
+        console.log("abc" - 5); //NaN not a number
+
+        console.log("abc" * 5);//NaN
+
+        console.log("5" - 4);// 1
+
+        console.log("23 + 45="+23+45);//23+45=2345
+
+        //== 值相等 === 值 类型都相等
+        console.log( 2=="2");//true
+        console.log( 2==="2");//false
+
+        // 短路 &&
+        console.log( false && 2 == 2)//false
+        console.log( true || false)//true
+        var bool = false;
+        console.log(bool+"");
+
+
+
+        var str = "some string"//空格也是非空
+        //字符串 非空即为真
+        //数值 非0即为真
+        //undefined 定义了没有赋值 假
+        //null 假
+
+        var x = null;
+        
+        console.log(!!str);//  快速转换成boolean值的放置
+        
+        //console.log()
+        
+        console.log(!!x)
+
+        console.log(" "*1)//0 空 是0(值是空)
+
+        var num = prompt("请输出成绩","默认值");
+        alert( num * 365 * 12 * 30 * 24 * 60 * 60);
+
+    </script>
+</body>
+</html>

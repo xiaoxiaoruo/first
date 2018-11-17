@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            height: 100px;
+            width: 200px;
+            background: #ff0000;
+            /* 触发条件 */
+            transition: width 2s ease 1s;
+            /* animation: 名 运动时间 运动方式 延迟时间 次数（无限循环:） 保持到最后不变*/
+            animation:run 2s ease 2s 3 forwards;
+        }
+        @keyframes run{
+            0%{
+
+            }
+            30%{
+                width: 500px;
+            }
+            60%{
+                width: 200px;
+            }
+            100%{
+                width: 500px;;
+            }
+        }
+        /* div:hover{
+            width: 500px;
+        } */
+
+    </style>
+</head>
+<body>
+    <div id="div0">
+
+        <!-- <script>
+            var oDIv = document.getElementById("div0");
+            oDIv.onclick = function(){
+                oDIv.style.width = 800 + "px";
+            }
+        </script> -->
+
+    </div>
+</body>
+</html>
