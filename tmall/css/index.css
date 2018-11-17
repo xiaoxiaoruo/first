@@ -1254,4 +1254,168 @@
     color: #7A45E5;
 }
 /* 剩下长得一样的结束 */
+/* 结尾开始 */
+#footer{
+    width: 100%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+    border-top: 1px solid #D1D7DC;
+    clear: both;
+    margin: 0;
+    text-align: center;
+    background: #fff;
+    position: relative;
+}
+#tmall-ensure{
+    width: 1190px;
+    height: 100px;
+    background: url(../image/jiewei.jpg) no-repeat;
+    margin:25px auto;
+    padding:0;
+}
+#tmall-ensure a{
+    float: left;
+    display: block;
+    width: 297px;
+    height: 100px;
+}
+#tmall-desc{
+    width: 1190px;
+    padding-top: 22px;
+    height: 190px;
+    margin: auto;
+    border-top: 1px solid #ededed;
+    background: url(../image/miaomiaomiao.png) 45px bottom;
+    background-repeat:no-repeat;
+    background-size:68px 25px;  
+}
+#tmall-desc #ensure{
+    float: left;
+    width: 186px;
+    padding-left: 52px;
+}
+#tmall-desc #ensure p{
+    color:#646464;
+    font-size:16px;
+    font-weight: 700;
+    height: 30px;
+    line-height: 30px;
+    text-align: left;
+}
+#ensure .ensure-a a{
+    display: block;
+    width: 100px;
+    overflow: hidden;
+    text-align: left;
+    height: 20px;
+    line-height: 20px;
+    color: #8b8b8b;
+}
+#ensure .teshu a{
+    width: 105px;
+    height: 105px;
+}
+#tmall-copyright{
+    border-top: 2px solid #FF0036;
+    background: #000;
+    text-align: left;
+}
+#tmall-copyright .footer-tmallinfo{
+    width: 1190px;
+    margin: 0 auto;
+    color: #fff;
+    line-height: 25px;
+    padding:5px 0;
+}
+#tmall-copyright .footer-tmallinfo a{
+    margin-right: 3px;
+    color: #fff;
+} 
+#tmall-copyright .footer-otherlink{
+    line-height: 20px;
+    background: #000;
+    color: #a4a4a4;
+    width: 1190px;
+    margin: 0 auto;
+}
+#tmall-copyright .footer-otherlink b{
+    display: block;
+    color:#686868;
+    font-weight: 400;
+}
+#tmall-copyright .footer-otherlink a{
+    color: #a4a4a4;
+    margin-right: 65px;
+}
+/* 结尾结束 */
+/* 左侧导航开始 */
+.left-nav{
+    background: #ff0036;
+    position: fixed;
+    top:0px;
+    left: 0px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    color:#fff;
+    cursor: pointer;
+    margin-top:1px; 
+    margin-left:2px;
+    font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+}
+.left-nav-list{
+    width: 35px;
+    height: 332px;
+    position: fixed;
+    top:37px;
+    left:px;
+    margin-left:2px;
+    font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+}
+.left-nav-list a{
+    display: block;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 1px;
+    background-color: rgba(0,0,0,.6);
+    font-size: 12px;
+    overflow: hidden;
+}
+.left-nav-in{
+    line-height: 12px;
+    width: 24px;
+    height: 28px;
+    margin: 6px auto;
+    color:#fff;
+}
+.left-nav-list .one:hover{
+    background: greenyellow;
+}
+.left-nav-list .two:hover{
+    background: #000;
+}
+.left-nav-list .three:hover{
+    background: pink;
+}
+.left-nav-list .four:hover{
+    background: greenyellow;
+}
+.left-nav-list .five:hover{
+    background: greenyellow;
+}
+.left-nav-list .six:hover{
+    background: greenyellow;
+}
+.left-nav-list .seven:hover{
+    background: greenyellow;
+}
+.left-nav-list .eight:hover{
+    background: greenyellow;
+}
+/* 左侧导航结束 */
 
