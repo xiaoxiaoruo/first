@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 加法
+        // 函数中的形参
+        function add(num1,num2){
+            console.log(num1 + num2);
+        }
+        // 实参
+        add(2,3);
+        add(3,4);
+        
+        //isNaN 判断是否是非数字  非数字会返回true 数字返回false
+        console.log(isNaN(10));
+
+        //计算三角形面积  函数的返回值默认会返回undefined
+        function area(wide,high){
+            var result = wide * high / 2;
+            // console.log(result);
+            return result;
+        }
+        // area(10,8);
+        
+        var a = area(20,5);
+
+        console.log(a);
+
+        console.log( area(20,5) );
+
+        var add = function(x,y){
+            return x + y;
+        }
+        
+    </script>
+</body>
+</html>
