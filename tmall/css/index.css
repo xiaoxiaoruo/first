@@ -1418,4 +1418,18 @@
     background: greenyellow;
 }
 /* 左侧导航结束 */
+#right-f{
+    height: 100%;
+    width: 35px;
+    background: #000;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    right:0;
+    top:0;
+}
+#right-f .right-nav-list{
+    flex:1;
+}
+
 
