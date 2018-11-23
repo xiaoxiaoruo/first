@@ -1428,8 +1428,26 @@
     right:0;
     top:0;
 }
-#right-f .right-nav-list{
+#right-f .right-tab{
     flex:1;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top:0px;
+    right: 0px;
+    margin:35.5px 0px 0px;
+    z-index:9;
+    background-image:url(../image/xiaomao.png);
+    cursor: pointer;
+}
+#right-f .right-che{
+    flex:1;
+    position: absolute;
+    color:#fff;
+    letter-spacing: 10px;
+    top:75px;
+    right:0px;
+    text-align: center;
 }
 
 
