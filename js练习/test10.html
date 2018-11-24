@@ -9,19 +9,20 @@
 <body>
     
     <script>
-        function show(){
-            for(var i = 1000;i <= 9999;i++){
-                if(i%13 == 0){
-                    var a = Math.floor(i/1000);//4
-                    var b = Math.floor((i-a*1000)/100) //3
-                    var c = Math.floor((i-a*1000-b*100)/10);//2
-                    if(a == (b + c)){
-                        return i;
-                    }
-                }
+        // 1234 / 1000 1.234
+
+        // 5234%1000  234/100  2/34
+        // 5234%1100  34/10  3.4
+
+        for(var i = 1000;i <= 9999;i++){
+            var A = parseInt( i/1000 );
+            var B = parseInt( i%1000/100 );
+            var C = parseInt( i%100/10 );
+            if( i % 13 ==0 && A == (B + C)){
+                document.write(i + ",");
             }
         }
-        console.log(show());
+
     </script>
 
 </body>

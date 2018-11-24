@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var x = prompt("输入第一个数");
+        var y = prompt("输入第二个数");
+        function show(x,y){
+            var sum = 0;
+            var sum1 = 1;
+            var sum2 = 1;
+            for(var i = 1;i <= x;i++){
+                sum1 = sum1 * i;
+            }
+            for(var j = 1;j <= y;j++){
+                sum2 = sum2 * j;
+            }
+            sum = sum1 - sum2;
+            return sum;
+        }
+        console.log(show(x,y));
+    </script>
+
+</body>
+</html>

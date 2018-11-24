@@ -11,18 +11,32 @@
 <body>
 
     <script>
-        function num() {
-            var sum = 0;
-            for (var i = 1; i <= 10; i++) {
-                var k = 1;
-                for (var j = 1; j <= i; j++) {
-                    k = k * j;
-                }
-                sum = sum + k;
+        // function num() {
+        //     var sum = 0;
+        //     for (var i = 1; i <= 10; i++) {
+        //         var k = 1;
+        //         for (var j = 1; j <= i; j++) {
+        //             k = k * j;
+        //         }
+        //         sum = sum + k;
+        //     }
+        //     return sum;
+        // }
+        // console.log("结果是:" + num());
+
+        function fn(n) {
+            var sum = 1;
+            for (var i = 1; i <= n; i++) {
+                sum *= i;
             }
             return sum;
         }
-        console.log("结果是:" + num());
+        //求 1 - 10的阶乘和
+        var result = 0;
+        for (var j = 1; j <= 10; j++) {
+            result += fn(j);
+        }
+        alert(result);
     </script>
 
 </body>

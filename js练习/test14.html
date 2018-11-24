@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var x = prompt("输入你要求的第N项");
+        function show(x){
+            var temp1 = 1;
+            var temp2 = 1;
+            var temp3 ;
+            for(var i = 3;i <= x;i++){
+                temp3 = temp1 + temp2 ;
+                temp1 = temp2;
+                temp2 = temp3;
+            }
+            return temp3;
+        }
+        document.write(show(x));
+    </script>
+
+</body>
+</html>
