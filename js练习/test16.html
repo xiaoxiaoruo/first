@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var sum = 0;
+        var n = parseInt(prompt("输入次数"));
+        for (var i = 0; i < n; i++) {
+            var x = parseInt(Math.random() * 10);
+            var y = parseInt(Math.random() * 10);
+            var z = parseInt(Math.random() * 10);
+            if (x == 8) {
+                sum++;
+            }
+            if (y == 8) {
+                sum++;
+            }
+            if (z == 8) {
+                sum++;
+            }
+        }
+        document.write( sum/n );
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var year = parseInt(prompt("输入年份："));
+        var month = parseInt(prompt("输入月份："));
+        var day = parseInt(prompt("输入日："));
+        function DayOfYear(year, month, day) {
+            var tianshu = 0;
+            if (IsLeapYear(year) == 0) {
+                var months = new Array(31,29,31,30,31,30,31,31,30,31,30,31);
+            } else if (IsLeapYear(year) == 1) {
+                var months = new Array(31,28,31,30,31,30,31,31,30,31,30,31);
+            }
+            for (var i = 0; i < (month - 1); i++) {
+                tianshu = tianshu + months[i];
+            }
+            return tianshu + day;
+        }
+        function IsLeapYear(year) {
+            if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+                return 0;
+            } else {
+                return 1;
+            }
+        }
+        document.write(DayOfYear(year, month, day));
+    </script>
+
+</body>
+
+</html>

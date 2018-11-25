@@ -10,11 +10,14 @@
     
     <script>
         var n = prompt("输入N");
-        function show(){
-            for(var i = 0;i < n;i++){
-                
+        function show(n){
+            var PI = 0;
+            for(var i = 1;i <= n;i++){
+                PI = PI + Math.pow(-1,i+1)*(1/(2 * i - 1));
             }
+            return PI * 4;
         }
+        document.write(show(n));
     </script>
 
 </body>

@@ -11,25 +11,46 @@
 <body>
 
     <script>
-        function show() {
-            var temp = 0;
-            for (var i = 100; i < 1000; i++) {
-                for (var j = 2; j < i - 1; j++) {
-                    if ((i % j) == 0)
-                        break;
-                    else {
-                        document.write(i + " ");
-                        temp++;
-                        if (temp == 6) {
-                            document.write("<br>");
-                            temp = 0;
-                        }
-                        break;
-                    }
+        // function show() {
+        //     var temp = 0;
+        //     for (var i = 100; i < 1000; i++) {
+        //         for (var j = 2; j < i - 1; j++) {
+        //             if ((i % j) == 0)
+        //                 break;
+        //             else {
+        //                 document.write(i + " ");
+        //                 temp++;
+        //                 if (temp == 6) {
+        //                     document.write("<br>");
+        //                     temp = 0;
+        //                 }
+        //                 break;
+        //             }
+        //         }
+        //     }
+        // }
+        // show();
+
+        var num = 0;
+        for(var i = 100;i <= 1000;i++){
+            var ok = false;
+            for(var j = 2;j < i;j++){
+                if(i%j == 0){
+                    ok = true;
+                }
+            }
+            if(!ok){
+                document.write(i);
+                document.write("&nbsp;");
+                num++;
+
+                if(num % 6 == 0){
+                    document.write("<br>");
                 }
             }
         }
-        show();
+
+
     </script>
 
 </body>

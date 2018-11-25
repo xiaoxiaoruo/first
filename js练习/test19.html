@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var s = Array(7);
+        s = prompt("输入七科成绩");
+        var sum = 0;
+        for(var i = 0;i < s.length;i++){
+            sum = sum + parseInt(s[i]);
+        }
+        document.write("平均分数：")
+        document.write(sum / 7);
+        document.write("|");
+        for(var i = 0;i < s.length;i++){
+            if(s[i] < 60){
+                document.write(s[i]);
+                document.write("&nbsp;");
+            }
+        }
+    </script>
+
+</body>
+</html>
