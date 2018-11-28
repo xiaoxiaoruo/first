@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 3000px;
+        }
+        #go-top{
+            width: 100px;
+            height: 200px;
+            display: block;
+            position: fixed;
+            right:50px;
+            bottom: 50px;
+            background:url(xiaohuojian1.png) no-repeat -8px -36px;
+        }
+        #go-top:hover{
+            background:url(xiaohuojian1.png) no-repeat -108px -34px;
+        }
+    </style>
+</head>
+<body>
+    
+    <a href="javascript:;" id="go-top"></a>
+    
+    <script>
+        /*
+        window对象的方法
+        窗体控制：
+        moveBy(x,y):水平移动x 垂直移动y
+        moveTo(x,y)：移动到x,y
+        resizeBy(w,h)：窗体宽调整w,高调整h
+        resizeTo(w,h)：窗体调整为w,h
+
+        窗体滚动轴控制：
+        scrollTo(x,y)：横向滚动条移动到x 纵向滚动条移动到y
+        scrollBy(x,y)：横向滚动条移动x 纵向滚动条移动y
+        */
+        var oBtn =  document.getElementById("go-top");
+        oBtn.onclick = function(){
+            var isScroll =  document.documentElement.scrollTop || document.body.scrollTop;
+            var timer =  setInterval(function(){
+                window.scrollTo(0,isScroll*=0.6);
+                console.log(isScroll);
+                if(isScroll <= 1){
+                    clearInterval(timer);
+                }
+            }, 100);
+        }
+    </script>
+
+</body>
+</html>
