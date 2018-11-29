@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <ul id="ul1">
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+        <li>04</li>
+    </ul>
+
+    <ul id="ul2">
+        <li>01</li>
+        <li class="aa bb">02</li>
+        <li>03</li>
+        <li class="aa">04</li>
+    </ul>
+
+    <input type="checkbox" name="sex">男
+    <input type="checkbox" name="sex">女
+
+    <script>
+        function getEleClassName(clsName, context) {
+            var result = [];
+
+            // if (contetx) {
+            //     var allEle = context.getElementsByTagName("*");
+            // } else {//如果没传参context之为undefined
+            //     var allEle = document.getElementsByTagName("*");
+            // }
+
+            var parentEle = context || document;
+            var allEle = parentEle.getElementsByTagName("*");
+            // var allEle = context.getElementsByTagName("*") || document.getElementsByTagName("*");为什么不行？
+
+            for (var i = 0; i < allEle.length; i++) {
+                // if (allEle[i].className.indexOf("aa") != -1) {
+                //     result.push(allEle[i]);
+                // }
+                var arr = allEle[i].className.split(" ");
+                for (var j = 0; j < arr.length; j++) {
+                    if (arr[j] == clsName) {
+                        result.push(allEle[i]);
+                    }
+                }
+            }
+            return result;
+        }
+
+        var aA = getEleClassName("aa");
+        for (var i = 0; i < aA.length; i++) {
+            aA[i].style.background = "red";
+        }
+
+        var aCheckbox = document.getElementsByName("sex");
+        for (var i = 0; i < aCheckbox.length; i++) {
+            aCheckbox[i].className = "aa";
+        }
+        console.log(aCheckbox[0].className);
+    </script>
+
+</body>
+
+</html>
