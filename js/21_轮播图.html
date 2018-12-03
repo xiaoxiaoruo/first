@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #container {
+            width: 680px;
+            height: 344px;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        #img-box img {
+            height: 345px;
+            width: 675px;
+            display: none;
+        }
+
+        #img-box .select {
+            display: block;
+        }
+
+        #tab {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        #tab li {
+            height: 20px;
+            width: 20px;
+            background: #000;
+            color: #fff;
+            line-height: 20px;
+            text-align: center;
+            float: left;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        #tab .select {
+            background: orange;
+        }
+
+        #prev-btn,
+        #next-btn {
+            position: absolute;
+            background: #000;
+            color: #ccc;
+            bottom: 10px;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        #prev-btn {
+            left: 10px;
+        }
+
+        #next-btn {
+            left: 35px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="img-box">
+            <img src="../tmall/image/111.jpg" alt="" class="select">
+            <img src="../tmall/image/222.jpg" alt="">
+            <img src="../tmall/image/333.jpg" alt="">
+            <img src="../tmall/image/444.jpg" alt="">
+        </div>
+        <ul id="tab">
+            <li class="select">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <!-- 实体字符 $lt;小于号  $gt;大于号 -->
+        <span id="prev-btn">&lt;</span>
+        <span id="next-btn">&gt;</span>
+    </div>
+
+
+    <script>
+        var oTab = document.getElementById("tab");
+        var aLi = oTab.getElementsByTagName("li");
+        var oDiv = document.getElementById("img-box");
+        var aImg = oDiv.getElementsByTagName("img");
+        var oNextBtn = document.getElementById("next-btn");
+        var oPrevBtn = document.getElementById("prev-btn");
+        var iNow1 = 0;
+        var iNow2 = aLi.length;
+        for (var i = 0; i < aLi.length; i++) {
+            aLi[i].index = i;
+            aLi[i].onmouseover = function () {
+                for (var j = 0; j < aLi.length; j++) {
+                    aLi[j].className = "";
+                    aImg[j].className = "";
+                    clearInterval(timer);
+                }
+                this.className = "select";
+                aImg[this.index].className = "select";
+            }
+            aLi[i].onmouseout = function () {
+                timer = setInterval(function () {
+                    change();
+                }, 1000);
+            }
+        }
+        oNextBtn.onclick = function () {
+            iNow1++;
+            if (iNow1 > aLi.length - 1) {
+                iNow1 = 0;
+            }
+            for (var j = 0; j < aLi.length; j++) {
+                aImg[j].className = "";
+                aLi[j].className = "";
+                clearInterval(timer);
+            }
+            aImg[iNow1].className = "select";
+            aLi[iNow1].className = "select";
+        }
+        oNextBtn.onmouseout = function () {
+            oNextBtn.onmouseout = function () {
+                timer = setInterval(function () {
+                    change();
+                }, 1000);
+            }
+        }
+        oPrevBtn.onclick = function () {
+            iNow2--;
+            if (iNow2 < 0) {
+                iNow2 = aLi.length - 1;
+            }
+            for (var j = 0; j < aLi.length; j++) {
+                aImg[j].className = "";
+                aLi[j].className = "";
+                clearInterval(timer);
+            }
+            aImg[iNow2].className = "select";
+            aLi[iNow2].className = "select";
+        }
+        oPrevBtn.onmouseout = function () {
+            oPrevBtn.onmouseout = function () {
+                timer = setInterval(function () {
+                    change();
+                }, 1000);
+            }
+        }
+        var temp = 0;
+        function change() {
+            if (temp <= 4) {
+                for (var j = 0; j < aImg.length; j++) {
+                    aLi[j].className = "";
+                    aImg[j].className = "";
+                }
+            }
+            if (temp == 4) {
+                temp = 0;
+            }
+            aLi[temp].className = "select";
+            aImg[temp].className = "select";
+            temp++;
+        }
+        var timer = setInterval(function () {
+            change();
+        }, 1000);
+    </script>
+</body>
+
+</html>

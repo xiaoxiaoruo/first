@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #container {
+            width: 400px;
+            height: 300px;
+            margin: 50px auto;
+        }
+
+        #container li:hover {
+            cursor: pointer;
+        }
+
+        #btn {
+            overflow: hidden;
+        }
+
+        #btn li {
+            width: 120px;
+            height: 30px;
+            text-align: center;
+            float: left;
+            line-height: 30px;
+            background: #ccc;
+            color: #fff;
+            margin-left: 10px;
+        }
+
+        #btn .select {
+            background: #000;
+        }
+
+        #content div {
+            width: 400px;
+            height: 270px;
+            background: #ccc;
+            border-top: 1px solid #000;
+            display: none;
+        }
+
+        #content .active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <ul id="btn">
+            <li class="select">111</li>
+            <li>222</li>
+            <li>333</li>
+        </ul>
+        <div id="content">
+            <div class="active">aaa</div>
+            <div>bbb</div>
+            <div>ccc</div>
+        </div>
+    </div>
+
+
+    <script>
+        var aLi = document.getElementsByTagName("li");
+        var oDiv = document.getElementById("content");
+        var aDiv = oDiv.getElementsByTagName("div");
+        for (var i = 0; i < aLi.length; i++) {
+
+            aLi[i].index = i;//aLi[0].index = 0; 加一个索引
+            aLi[i].onclick = function () {
+                for (var j = 0; j < aLi.length; j++) {
+                    aLi[j].className = "";
+                    aDiv[j].className = "";
+                }
+                this.className = "select";//当前点击的加select
+                aDiv[this.index].className = "active";//找到与点击li索引对应的div 添加active
+            }
+        }
+    </script>
+
+</body>
+
+</html>
