@@ -46,7 +46,7 @@
         */
         var oBtn =  document.getElementById("go-top");
         oBtn.onclick = function(){
-            var isScroll =  document.documentElement.scrollTop || document.body.scrollTop;
+            var isScroll =  document.documentElement.scrollTop || document.body.scrollTop;//后边 IE
             var timer =  setInterval(function(){
                 window.scrollTo(0,isScroll*=0.6);
                 console.log(isScroll);

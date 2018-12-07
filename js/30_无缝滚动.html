@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #container {
+            width: 400px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 50px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        li {
+            width: 120px;
+            height: 120px;
+            margin-right: 10px;
+            background: #000;
+            color: #fff;
+            font-size: 40px;
+            text-align: center;
+            line-height: 120px;
+            float: left;
+        }
+
+        ul {
+            width: 520px;
+            position: absolute;
+        }
+
+        #arrow {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            margin-left: -100px;
+        }
+
+        #arrow span {
+            display: inline-block;
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            background: #ccc;
+            line-height: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="container">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div id="arrow">
+            <span id="left">&lt&lt向左</span>
+            <span id="right">向右&gt&gt</span>
+        </div>
+    </div>
+
+    <script>
+        var oUl = document.getElementsByTagName("ul")[0];
+        var aLi = oUl.getElementsByTagName("li");
+        var speed = -2;
+        var oRight = document.getElementById("right");
+        var oLeft = document.getElementById("left");
+        oUl.innerHTML = oUl.innerHTML + oUl.innerHTML;
+        oUl.style.width = (aLi[0].offsetWidth + 10) * 8 + "px";
+
+        oRight.onmouseover = function () {
+            speed = 2;
+        }
+        oLeft.onmouseover = function(){
+            speed = -2;
+        }
+
+        setInterval(function () {
+            oUl.style.left = (oUl.offsetLeft + speed) + "px";
+            // if(oUl.style.left == oUl.offsetWidth/2) 为什么不好使？
+            if (oUl.offsetLeft <= -oUl.offsetWidth / 2) {
+                oUl.style.left = "0px";
+            }
+            if(oUl.offsetLeft > 0){
+                oUl.style.left = -oUl.offsetWidth / 2 + "px";
+            }
+        }, 30);
+    </script>
+
+</body>
+
+</html>
