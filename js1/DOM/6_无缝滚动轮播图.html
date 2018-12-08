@@ -141,7 +141,7 @@
         var aSpan = oArrow.getElementsByTagName("li");
         var oLeft = document.getElementById("left");
         var oRight = document.getElementById("right");
-        var temp = 0;// 记录图片
+        var temp = -1;// 记录图片
         var timer;// 计时器
         for (var i = 0; i < aLi.length; i++) {
             aLi[i].index = i;
@@ -159,32 +159,24 @@
         }
         oRight.onclick = function () {
             temp++;
-            console.log(temp);
             if (temp == aLi.length) {
                 temp = 0;
             }
             change(temp);
+            console.log(temp);
         }
         oLeft.onclick = function () {
             temp--;
-            console.log(temp);
             if (temp == -1) {
                 temp = aLi.length - 1;
             }
             change(temp);
+            console.log(temp);
         }
 
         function start() {
             timer = setInterval(function () {
-                oImg.style.left = -750 * temp + "px";
-                for (var j = 0; j < aLi.length; j++) {
-                    aLi[j].className = "";
-                }
-                aLi[temp].className = "selected";
-                temp++;
-                if (temp == 5) {
-                    temp = 0;
-                }
+                oRight.onclick();
             }, 2000);
         }
 
