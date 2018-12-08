@@ -94,7 +94,7 @@
 
         setInterval(function () {
             oUl.style.left = (oUl.offsetLeft + speed) + "px";
-            // if(oUl.style.left == oUl.offsetWidth/2) 为什么不好使？
+            // if(oUl.style.left == oUl.offsetWidth/2) 为什么不好使？ 因为有px和没有px的相比
             if (oUl.offsetLeft <= -oUl.offsetWidth / 2) {
                 oUl.style.left = "0px";
             }

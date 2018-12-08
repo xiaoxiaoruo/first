@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #container {
+            width: 750px;
+            height: 291px;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        #img-box {
+            text-align: center;
+        }
+
+        #img-box .active {
+            display: block;
+        }
+
+        #img-box img {
+            width: 450px;
+            height: 291px;
+            margin: 0 auto;
+            display: none;
+        }
+
+        #btn-box li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            margin-right: 5px;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        #btn-box {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+        }
+
+        #btn-box li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            margin-right: 5px;
+            color: #fff;
+            text-align: center;
+            line-height: 20px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #btn-box .selected {
+            background: #ff0036;
+        }
+
+        #arrow {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        #arrow span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            line-height: 20px;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="img-box">
+            <img src="image/1.jpg" alt="" class="active">
+            <img src="image/2.jpg" alt="">
+            <img src="image/3.jpg" alt="">
+            <img src="image/4.jpg" alt="">
+            <img src="image/5.jpg" alt="">
+        </div>
+        <div id="arrow">
+            <span id="left">&lt</span>
+            <span id="right">&gt</span>
+        </div>
+        <div id="btn-box">
+            <ul>
+                <li class="selected">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        var oContainer = document.getElementById("container");
+        var oBtn = document.getElementById("btn-box");
+        var aLi = oBtn.getElementsByTagName("li");
+        var oImg = document.getElementById("img-box");
+        var aImg = oImg.getElementsByTagName("img");
+        var oArrow = document.getElementById("arrow");
+        var aSpan = oArrow.getElementsByTagName("li");
+        var oLeft = document.getElementById("left");
+        var oRight = document.getElementById("right");
+        var temp = 0;// 记录图片
+        var timer;// 计时器
+        for (var i = 0; i < aLi.length; i++) {
+            aLi[i].index = i;
+            aLi[i].onmouseover = function () {
+                change(this.index);
+                clearInterval(timer);
+                temp = this.index;
+            }
+        }
+        oContainer.onmouseover = function () {
+            clearInterval(timer);
+        }
+        oContainer.onmouseout = function(){
+            start();
+        }
+        oRight.onclick = function () {
+            temp++;
+            console.log(temp);
+            if (temp == aLi.length) {
+                temp = 0;
+            }
+            change(temp);
+        }
+        oLeft.onclick = function () {
+            temp--;
+            console.log(temp);
+            if (temp == -1) {
+                temp = aLi.length - 1;
+            }
+            change(temp);
+        }
+        function start() {
+            timer = setInterval(function () {
+                // for (var j = 0; j < aLi.length; j++) {
+                //     aImg[j].className = "";
+                //     aLi[j].className = "";
+                // }
+                // aImg[temp].className = "active";
+                // aLi[temp].className = "selected";
+                // temp++;
+                // if (temp == 5) {
+                //     temp = 0;
+                // }
+                oRight.onclick();
+            }, 1000);
+        }
+        function change(idx) {
+            for (var j = 0; j < aLi.length; j++) {
+                aImg[j].className = "";
+                aLi[j].className = "";
+            }
+            aLi[idx].className = "selected";
+            aImg[idx].className = "active";
+        }
+
+        start();
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #body {
+            position: relative;
+        }
+
+        #div1 {
+            width: 100px;
+            height: 200px;
+            border: 1px solid #ccc;
+            display: none;
+            position: absolute;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        #ul1 li {
+            margin-top: 7px;
+            text-align: center;
+            background: #ccc;
+        }
+
+        #ul1 li:hover {
+            background: aqua;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <ul id="ul1">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+        </ul>
+    </div>
+
+    <script>
+        var oDiv = document.getElementById("div1");
+        var oUl1 = document.getElementById("ul1");
+        var aLi = oUl1.getElementsByTagName("li");
+        document.oncontextmenu = function (e) {
+            oDiv.style.display = "block";
+            e = e || window.event;
+            // console.log(e.clientX);
+            oDiv.style.left = e.clientX + "px";
+            oDiv.style.top = e.clientY + "px";
+
+            // e.preventDefault(); 标准浏览器下 阻止默认行为
+
+            // e.returnValue = false; IE浏览器 阻止默认行为
+            return false;
+        }
+        for (var i = 0; i < aLi.length; i++) {
+            aLi[i].onclick = function () {
+                console.log(this.innerHTML);
+                oDiv.style.display = "none";
+            }
+        }
+        document.onclick = function () {
+            oDiv.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
