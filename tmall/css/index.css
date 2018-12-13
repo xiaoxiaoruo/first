@@ -458,6 +458,12 @@
     width: 1230px;
     display: block;
     height: 500px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+.slide-img-box .on{
+    opacity:1;
+    transition: opacity 0.5s ease;
 }
 .slide-box{
     position: relative;
@@ -469,6 +475,7 @@
     top:0px;
     /* z-index:-1; */
 }
+
 .slide-btn-box{
     position: absolute;
     bottom:25px;
@@ -488,7 +495,10 @@
     float:left;
     cursor: pointer;
 }
-.slide-btn-box li:hover{
+/* .slide-btn-box li:hover{
+    background: #fff;
+} */
+.slide-btn-box .select{
     background: #fff;
 }
 /* 轮播图结束 */
@@ -1363,11 +1373,19 @@
 }
 /* 结尾结束 */
 /* 左侧导航开始 */
+.left{
+    position:fixed;
+    bottom:50px;
+    left:0px;
+    display: none;
+    height: 0px;
+    width: 0px;
+}
 .left-nav{
     background: #ff0036;
-    position: fixed;
-    top:0px;
-    left: 0px;
+    /* position: fixed; */
+    /* top:0px; */
+    /* left: 0px; */
     width: 36px;
     height: 36px;
     line-height: 36px;
@@ -1381,9 +1399,10 @@
 .left-nav-list{
     width: 35px;
     height: 332px;
-    position: fixed;
-    top:37px;
-    left:px;
+    /* position: fixed; */
+    /* top:37px; */
+    /* left:px; */
+    /* margin-top:37px; */
     margin-left:2px;
     font-family: "Microsoft YaHei",tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
 }

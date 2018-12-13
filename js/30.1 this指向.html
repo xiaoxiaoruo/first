@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+
+        #div2 {
+            width: 100px;
+            height: 100px;
+            background: #00ff00;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        dgsdfs
+        <div id="div2">
+            ghjnk
+        </div>
+    </div>
+
+    <script>
+
+
+        // //1.定时器中this指向window
+        // setInterval(function () {
+        //     console.log(this);
+        // }, 200);
+
+        // var person = {
+        //     name: "zhangsan",
+        //     age: "11"
+        // };
+        // // var person = new Object();
+        // // person.name = "zhangsan";
+        // //2.函数中this指向window
+        // function aa(x, y) {
+        //     console.log(x + "," + y)
+        //     console.log(this.name);
+        // }
+        // // aa.call(person);
+        // // 改变this指向
+        // aa.call(person, 4, 5);
+        // aa.apply(person, [4, 5]);
+        // aa.bind(person, 4, 5)();// 绑定bind 但是没调用函数
+        //3.事件中  this对当前对象的引用
+        var oDiv = document.getElementById("div1");
+        oDiv.onclick = function (e) {
+            e = e || window.event;
+            // console.log(this);//this 对当前对象的引用 谁的事件
+            var target = e.target || e.src;
+            console.log(target);// 事件源
+            console.log(e.currentTarget);// 跟this效果一样
+        }
+
+        var cat = {
+            name:"mimi",
+            age:3,
+            eat:function(){
+                console.log(this.name + " is eating");
+            }
+        }
+        cat.eat();
+
+    </script>
+</body>
+
+</html>

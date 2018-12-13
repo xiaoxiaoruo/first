@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            width: 120px;
+            height: 120px;
+            background: pink;
+            float: left;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 120px;
+            font-size:18px;
+        }
+
+        #content {
+            width: 400px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #num-box {
+            width: 520px;
+            position: absolute;
+            left: 0px;
+        }
+
+        #btn-box {
+            margin: 136px 94px;
+        }
+
+        #btn-box span {
+            width: 100px;
+            height: 50px;
+            background: palevioletred;
+            display: inline-block;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content">
+        <ul id="num-box">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div id="btn-box">
+            <span id="left">向左</span>
+            <span id="right">向右</span>
+        </div>
+    </div>
+
+    <script>
+        var oNumbox = document.getElementById("num-box");
+        var oRight = document.getElementById("right");
+        var oLeft = document.getElementById("left");
+        var speed = 3;
+        // 内容 复制
+        oNumbox.innerHTML = oNumbox.innerHTML + oNumbox.innerHTML;
+        // 宽度 * 2
+        oNumbox.style.width = oNumbox.offsetWidth * 2 + "px";
+            setInterval(function () {
+                oNumbox.style.left = oNumbox.offsetLeft - speed + "px";
+                if (oNumbox.offsetLeft <= -oNumbox.offsetWidth / 2) {
+                    oNumbox.style.left = "0px";
+                }
+                if (oNumbox.offsetLeft > 0) {
+                    oNumbox.style.left = -oNumbox.offsetWidth / 2 + "px";
+                }
+            }, 20);
+
+        oRight.onmouseover = function () {
+            speed = -3;
+        }
+        oLeft.onmouseover = function () {
+            speed = 3;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+    </style>
+</head>
+
+<body style="width: 2000px;">
+    <div id="div1">rhjk</div>
+    <script>
+        var oDiv = document.getElementById("div1");
+        // //addEventListener 标准浏览器
+        // oDiv.addEventListener("click",function(){
+        //     console.log(111);
+        // },false);
+        // oDiv.addEventListener("click",function(){
+        //     console.log(222);
+        // },false);
+        // // IE 浏览器
+        // oDiv.attachEvent("onclick",function(){
+        //     alert(111);
+        // })
+
+        // function addEvent(elem, type, fn, flag) {
+        //     if (elem.addEventListener) {// 标准浏览器 判断有没有addEventListener属性
+        //         elem.addEventListener(type, fn, flag);
+        //     } else {
+        //         elem.attachEvent("on" + type, function () {
+        //             fn.call(elem);
+        //         });// 绑定事件 this指向window
+        //     }
+        // }
+        // addEvent(oDiv, "click", function () {
+        //     alert(this.innerHTML);
+        // }, false);
+
+        // oDiv.onclick = function(e){
+        //     e = e || window.event;
+        //     // console.log(e.button);// 0 鼠标左键 1 滑轮 2 鼠标右键
+        //     // console.log(e.layerX + "," + e.clientX);
+        //     // pageX(鼠标相对于页面) clientX(鼠标相对于可视区域)
+        //     // console.log(e.pageX + "," + e.clientX);
+        //     console.log(e.altKey);//判断是否按了alt键
+        // }
+        // 返回键盘按键对应的code值
+        // document.onkeydown = function(e){
+        //     var keycode = e.keyCode || window.event.which;
+        //     console.log(keycode);
+        // }
+    </script>
+</body>
+
+</html>
