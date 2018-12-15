@@ -63,7 +63,7 @@
         oDiv.onclick = function (e) {
             e = e || window.event;
             // console.log(this);//this 对当前对象的引用 谁的事件
-            var target = e.target || e.src;
+            var target = e.target || e.src;// 前标准 后IE
             console.log(target);// 事件源
             console.log(e.currentTarget);// 跟this效果一样
         }
