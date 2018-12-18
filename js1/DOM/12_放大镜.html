@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #small-box {
+            position: relative;
+            float: left;
+        }
+
+        span {
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            background: rgba(255, 255, 255, 0.5);
+            left: 0px;
+            top: 0px;
+            display: none;
+        }
+
+        #big-box {
+            float: left;
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            display: none;
+            position: relative;
+        }
+        #big-box img{
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="small-box">
+        <img src="image/6.jpg" alt="">
+        <span></span>
+    </div>
+    <div id="big-box">
+        <img src="image/7.jpg" alt="">
+    </div>
+
+    <script>
+        var oSmallbox = document.getElementById("small-box");
+        var oBigbox = document.getElementById("big-box");
+        var oImg = oBigbox.getElementsByTagName("img")[0];
+        var oSpan = document.getElementsByTagName("span")[0];
+        oSmallbox.onmouseover = function () {
+            oSpan.style.display = "block";
+            oBigbox.style.display = "block";
+        }
+        oSmallbox.onmousemove = function (e) {
+            oSpan.style.left = e.clientX - oSpan.offsetWidth / 2 + "px";
+            oSpan.style.top = e.clientY - oSpan.offsetHeight / 2 + "px";
+            if (oSpan.offsetLeft >= oSmallbox.offsetWidth - oSpan.offsetWidth) {
+                oSpan.style.left = oSmallbox.offsetWidth - oSpan.offsetWidth + "px";
+            }
+            if (oSpan.offsetTop >= oSmallbox.offsetHeight - oSpan.offsetHeight) {
+                oSpan.style.top = oSmallbox.offsetHeight - oSpan.offsetHeight + "px";
+            }
+            if (oSpan.offsetLeft <= 0) {
+                oSpan.style.left = "0px";
+            }
+            if (oSpan.offsetTop <= 0) {
+                oSpan.style.top = "0px";
+            }
+
+            // 左边span能走最大距离 oSmallBox - span
+            var smallMax = oSmallbox.offsetWidth - oSpan.offsetWidth;
+            var smallMaxY = oSmallbox.offsetHeight - oSpan.offsetHeight;
+            // 右边大图能走最大距离 oImg - oBigBox
+            var bigMax = oImg.offsetWidth - oBigbox.offsetWidth;
+            var bigMaxY = oImg.offsetHeight - oBigbox.offsetHeight;
+            // 左边span当前走的百分比
+            var percent = oSpan.offsetLeft/smallMax;
+            var percentY = oSpan.offsetTop/smallMaxY;
+
+            oImg.style.left = -bigMax * percent + "px";
+            oImg.style.top = -bigMaxY * percentY + "px";
+
+            // oImg.style.marginLeft = -oSpan.offsetLeft * 2 + "px";
+            // oImg.style.marginTop = -oSpan.offsetTop * 2 + "px";
+        }
+        oSmallbox.onmouseout = function () {
+            oSpan.style.display = "none";
+            oBigbox.style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
