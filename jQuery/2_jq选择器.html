@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1">1234256</div>
+    <ul>
+        <li>1</li>
+        <li  id="li11" class="aa">2</li>
+        <li class="aa bb cc">3</li>
+        <li class="aacc">4</li>
+    </ul>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // console.log($("#div1"));//jq对象
+        
+        // var oDiv = document.getElementById("div1");
+        // console.log($(oDiv).html());
+        // console.log(oDiv.innerHTML);
+        // // 原生对象 -> jQuery $(原生对象)
+        // // jQuery —> 原生 $div.get(0) $div[0]
+        // $div = $("#div1");
+
+        // console.log($div.get(0));
+        // console.log($div[0]);
+
+        // $(".aa").css("background","red");
+
+        // $("li,div").css("color","green");// 群组选择器
+
+        // $("#div1 + ul").css("color", "blue");
+        // $("#li1 ~ li").css("color", "blue");// 选中后边所有的兄弟
+
+        // $("li[id]").css("background","blue");// 有id
+        // $("li[id=li1]").css("background","blue");
+        // $("li[id!=li1]").css("background","blue");
+        // $("li[id*=li1]").css("background","blue");// 包含
+        // $("li[class~=aa]").css("background","blue");// 空格分隔
+        // $("ul li:first-child").css("background","blue");
+        // $("ul:first-of-type").css("background","blue");// 第一个类型的
+        // 索引从1开始 未知数n从0开始
+        // $("li:nth-child(even)").css("background","blue");// even索引是偶数的 索引从1开始
+        // $("li:nth-child(odd)").css("background","blue");// odd索引是奇数的 索引从1开始
+        // $("li:eq(-2)").css("background","blue");// 选择第几个 索引从0开始 负数是倒数第几个
+        // $("li:even").css("background","red");// 偶数 按照索引算 从0开始
+        // $("li:first").css("background","red");
+
+        // $("li:gt(2)").css("background","red");// 索引大于x
+        $("li:not(.aa)").css("background","red");// 传入选择器
+        //root —> HTML
+        // containt() empty()没有子元素 has() parent()等等
+        // $(":input")// 选中input标签元素和表单元素
+    </script>
+</body>
+
+</html>
