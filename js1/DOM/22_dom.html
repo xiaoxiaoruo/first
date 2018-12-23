@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="div1">
+        drftyguh
+    </div>
+
+    <ul>
+        <li>111</li>
+        <li>222</li>
+    </ul>
+    <script>
+
+        // var oDiv = document.getElementById("div1");
+        // document.getElementsByTagName("div1");
+        // document.getElementsByName("div1");
+        // document.getElementsByClassName("div1");
+
+        var oDiv1 = document.querySelector("#div1");
+        var aLi1 = document.querySelector("li");
+        var aLi2 = document.querySelectorAll("li");
+
+        console.log(oDiv1);
+        console.log(aLi1);
+        console.log(aLi2);
+
+        /*节点
+            节点遍历
+                firstChild firstElementChild
+                lastChild
+                nextSibling
+                previousSibling
+                children
+            节点操作
+                createElement()
+                appendChild()
+                removeChild()
+                replaceChild(newNode,oldNode)
+                insertBefore(newNode,在谁前边)
+                cloneNode(true)
+            属性
+                setAttribute()
+                getAttribute()
+        */
+        /*
+            可以获取 可以设置 获取到的事内联样式
+            elem.style.width
+            elem.style.width
+            获取样式：
+            elem.offsetWidth
+            elem.offsetHeight
+            elem.offsetTop
+            elem.offsetLeft
+            elem.offsetParent
+
+             //innHTML
+        */
+        // console.log( oDiv1.innerHTML);
+        // console.log( oDiv1.innerText);
+
+        // oDiv1.innerHTML = "<h2>HAHA</h2>"; //可以识别标签
+        oDiv1.innerText = "<h2>HAHA</h2>";
+
+    </script>
+
+</body>
+
+</html>

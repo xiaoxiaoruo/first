@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+
+        #div2 {
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="div1">
+        <div id="div2">
+
+        </div>
+    </div>
+
+    <script>
+        var oDiv2 = document.getElementById("div2");
+        var oDiv1 = document.getElementById("div1");
+
+        // oDiv2.onclick = function () {
+        //     console.log("div2 click");
+        // }
+        // oDiv1.onclick = function () {
+        //     console.log("div1 click");
+        // }
+        /*  
+            事件流 冒泡 捕获
+            冒泡 从里到外
+            捕获 从外到里
+
+            从外到里 从里到外 (先捕获 在冒泡)
+
+        */
+        oDiv2.addEventListener("click",function(){
+            console.log("div2 捕获");
+        },true);
+        oDiv1.addEventListener("click",function(){
+            console.log("div1 捕获");
+        },true);
+        oDiv2.addEventListener("click",function(){
+            console.log("div2 冒泡");
+        },false);
+        oDiv1.addEventListener("click",function(){
+            console.log("div1 冒泡");
+        },false);
+
+    </script>
+
+</body>
+
+</html>

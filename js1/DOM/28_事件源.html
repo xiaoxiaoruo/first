@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #f000f0;
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background: #00ffff;
+            /* position: relative;
+            top:300px; */
+        }
+    
+    </style>
+</head>
+<body>
+
+    <div id="div1">
+        <div id="div2"></div>
+    </div>
+
+
+    <script>
+        var oDiv2 = document.getElementById('div2');
+        var oDiv1 = document.getElementById('div1');
+        oDiv1.onclick = function(e){
+            // console.log("div1 click");
+            // console.log(e.target);
+
+            console.log(this);
+            // 当前对象的引用 谁的事件 this 
+            console.log(e.currentTarget);   //this
+        }
+        
+
+
+
+        
+
+
+    
+    </script>
+    
+</body>
+</html>

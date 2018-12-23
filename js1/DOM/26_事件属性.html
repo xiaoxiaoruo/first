@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        haha
+    </div>
+
+
+    <script>
+        var oDiv = document.getElementById('div1');
+        // 事件源  事件  事件处理函数
+        oDiv.onclick = function(e){
+            // 标准 e   ie  window.event
+            e = e || window.event;
+            // 获取事件源   e.target => 标准浏览器   e.srcElement => ie
+            var target = e.target || e.srcElement;
+
+            // e.clientX   鼠标距离可视区左边
+            // e.clientY   鼠标距离可视区上边
+            
+            // e.keyCode  键盘码
+
+            // 阻止默认行为
+            // e.preventDefault(); //标准
+            // e.returnValue = false;
+            // return false;
+            
+            // 阻止事件冒泡
+            // e.stopPropagation();  //标准
+            // e.cancelBubble = true;  //ie
+
+        }
+
+        document.onkeydown = function(e){
+            e = e || window.event;
+
+            // console.log( e.keyCode );
+
+            if(e.keyCode == 13){
+                alert('哈哈');
+            }
+
+
+
+        }
+    
+    </script>
+
+
+</body>
+</html>

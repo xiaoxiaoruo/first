@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div id="div1" onclick="alert(123)">
+        hahhah
+    </div> -->
+    <div id="div1">
+        hahhah
+    </div>
+    <script>
+        var oDiv1 = document.getElementById("div1");
+        // oDiv.onclick = function(){
+        //     console.log(1111);
+        // }
+        // oDiv.onclick = function(){
+        //     console.log(2222);
+        // }
+        oDiv1.addEventListener("click",function(){
+            console.log(1111);
+        },false);// 支持冒泡
+        oDiv1.addEventListener("click",function(){
+            console.log(2222);
+        },false);// 支持冒泡
+    </script>
+
+</body>
+
+</html>
