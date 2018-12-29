@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        aaa
+    </div>
+    <p>bbb</p>
+    <h1>hhh</h1>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        //可以放String 原生对象 jQuery对象
+        // $("#div1").append("<p>mhnfgbdf</p>");
+        // var ele = document.createElement("span");
+        // ele.innerHTML = "hahaha";
+        // $("#div1").append(ele);
+        // $ele = $("p").clone();
+        // 链式操作 后边的操作都操作前边的对象
+        // $("#div1").append($ele).css("background","red").height(500);
+        // $("h1").appendTo("#div1").css("background","pink");
+        // $("h1").insertAfter($("#div1"));// 在外部的后边 前边是被放入的
+        // $("#div1").after($("h1"));
+        // $("h1").remove();
+        // 用谁替换谁
+        $("<span>ccc</span>").replaceAll("#div1");
+        // 把谁替换谁
+        // $("#div1").replaceWith("<span>ccc</span>");
+    </script>
+</body>
+</html>
