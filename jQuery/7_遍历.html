@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li class="aa">3</li>
+        <li>4</li>
+        <li>
+            5
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </li>
+        <li>6</li>
+    </ul>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // $("li").filter(".aa").css("background","red");
+        // $("li").has("ul").css("background","red");
+        //is() 判断是不是***
+        // 找到所有的li可以不是亲孩子
+        $("ul").find("li").css("background","red");// 链式操作接下来对find()的进行操作
+        $("ul").find("li").css("background","red").end().css("background","blue");// end() 退一步
+        // closeset() 找到离最近的祖先元素
+        // next()往下找一个（同级）
+        // nextAll()往下找所有的（同级）
+        // nextUtil(elem)往下找直到elem
+    </script>
+</body>
+</html>
