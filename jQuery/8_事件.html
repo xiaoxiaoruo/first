@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: red;
+            ;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">click</button>
+    <div id="div1">
+
+    </div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+    </ul>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // change() 文本改变触发的事件;
+        // select() 选择时候触发的事件;
+        var fn = function () {
+            alert("aaa");
+        }
+        //one() 事件只绑定一次
+        $("#div1").on("click", fn);
+
+
+        // $("li").on("click",function(){
+        //     console.log(this.innerHTML);
+        //     $("this").html();
+        // })
+        // $("#btn").on("click",function(){
+        //     $("ul").append("<li>" + Math.random() + "</li>")
+        // })
+        // $("ul").on("click","li",function(){
+        //     console.log($(this).html());
+        // })
+        $("#btn").on("click", function () {
+            $("#div1").off("click", fn);
+        })
+    </script>
+</body>
+
+</html>
