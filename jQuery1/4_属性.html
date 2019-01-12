@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="div1" class="aa">
+        dghjk
+    </div>
+
+    <input type="checkbox" name="ball">足球
+    <input type="checkbox" name="ball">篮球
+    <input type="checkbox" name="ball">乒乓球
+    <input type="checkbox" name="ball">羽毛球
+    <button id="all">全选</button>
+    <button id="unAll">全不选</button>
+    <button id="fchoose">反选</button>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // console.log( $("#div1").attr("class") );
+        // attr 普通的
+        //  $("#div1").attr("class","bb");
+        // prop 特性的
+        //  $("#div1").prop("class","bb");
+        $("#all").on("click", function () {
+            $(":checkbox").prop("checked", true);
+        })
+        $("#unAll").on("click", function () {
+            $(":checkbox").prop("checked", false);
+        })
+        $("#fchoose").on("click", function () {
+            $(":checkbox").each(function (index, elem) {
+                /*
+                    function(index,elem)里的index和elem由each传参
+                    index 对应的索引值
+                    elem 原生element
+                */
+                elem.checked = !elem.checked;
+            })
+        })
+        // removeAttr() 移除属性
+        $("#div1").removeAttr("class");
+    </script>
+</body>
+
+</html>
