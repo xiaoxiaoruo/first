@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="hide">hide</button>
+    <button id="show">show</button>
+    <button id="toggle">toggle</button>
+    <button id="animate">animate</button>
+    <button id="stop">stop</button>
+    <div id="div1"></div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // $("#hide").on("click", function () {
+        //     $("#div1").hide(400, function () {
+        //         console.log("ok");
+        //     });
+        // });
+        // 不同的隐藏方式
+        $("#hide").on("click", function () {
+            $("#div1").slideUp(400, function () {
+                console.log("ok");
+            });
+        });
+        $("#show").on("click", function () {
+            $("#div1").show(400, function () {
+                console.log("ok");
+            });
+        });
+        $("#toggle").on("click", function () {
+            $("#div1").toggle(400, function () {
+                console.log("ok");
+            });
+        });
+        //animate(属性,执行时间,运动方式,成功的回调函数)
+        // 一个一个执行
+        $("#animate").on("click", function () {
+            $("#div1").animate({
+                width: 800
+            }, 2000).animate({
+                height: 500
+            }, 2000)
+        });
+        // stop(属性1,属性2)两个属性 默认值是false 第一个属性：清除队列;第二个属：直接执行完第一个动画开始第二个
+        $("#stop").on("click", function () {
+            $("#div1").stop(false, true);
+        });
+        //fidein() fideout()淡入淡出 fidetoggle()切换淡入淡出 例如：改变透明度
+
+
+    </script>
+
+</body>
+
+</html>
