@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .baohan{
+            margin:0 10px;
+            float: left;
+        }
+        .show{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="baohan">
+            <a href="">菜单一</a>
+            <ul class="show">
+                <li>1</li>
+                <li>2</li>
+            </ul>
+        </li>
+        <li class="baohan">
+            <a href="">菜单二</a>
+            <ul class="show">
+                <li>1</li>
+                <li>2</li>
+            </ul>
+        </li>
+        <li class="baohan">
+            <a href="">菜单三</a>
+            <ul class="show">
+                <li>1</li>
+                <li>2</li>
+            </ul>
+        </li>
+    </ul>
+
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+        $(".baohan").hover(function(){
+            $(this).find("a").next().slideDown(600);
+        },function(){
+            $(this).find("a").next().slideUp(600);
+        })
+    </script>
+
+</body>
+
+</html>

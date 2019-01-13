@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="div1">
+        <div class="aa"></div>
+        <div class="bb"></div>
+    </div>
+
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+    </ul>
+    <ul>
+        <li>11</li>
+        <li class="dd">22</li>
+        <li>33</li>
+    </ul>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // var $div1 = $("#div1");
+        // $("#div1 .aa");
+        // $(".aa",$div1).css("background","red");
+
+        console.log( $(".dd").index() );//在兄弟元素中的索引
+        console.log( $("li").index(".dd") );
+
+
+        console.log($("li").size());
+        console.log($("li").length);
+
+        var obj1 ={
+            name:"zs",
+            age:10
+        }
+        var obj2 ={
+            age:12,
+            school:"weichuang"
+        }
+
+        console.log( $.extend({},obj1,obj2) );//会把值加到第一个里
+        console.log( obj );
+
+    </script>
+
+</body>
+</html>

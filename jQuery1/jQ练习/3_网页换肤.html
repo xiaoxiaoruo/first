@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 30px;
+            border: 1px solid #000;
+        }
+
+        .div2 {
+            width: 20px;
+            height: 20px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            margin: 5px 5px;
+            float: left;
+            cursor: pointer;
+        }
+
+        .first {
+            background: gray;
+        }
+
+        .second {
+            background: red;
+        }
+
+        .third {
+            background: green;
+        }
+
+        .fourth {
+            background: blue;
+        }
+
+        .five {
+            background: purple;
+        }
+
+        .six {
+            background: yellow;
+        }
+
+        button {
+            color: white;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <div class="div2 first"></div>
+        <div class="div2 second"></div>
+        <div class="div2 third"></div>
+        <div class="div2 fourth"></div>
+        <div class="div2 five"></div>
+        <div class="div2 six"></div>
+    </div>
+    <button id="btn">新闻，娱乐</button>
+
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+        var bg = $(".first").css("background");
+        $("#btn").css("background", bg);
+        $(".div2").on("click", function () {
+            var bg1 = $(this).css("background");
+            $("#btn").css("background", bg1);
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            font-size:14px; 
+            width: 200px;
+            overflow: unset;
+        }
+    </style>
+</head>
+<body>
+    
+    <button id="big">big</button>
+    <button id="small">small</button>
+    <div id="div1">
+        <p>This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text</p></div>
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+        $("#big").on("click",function(){
+            // console.log( $("#div1").css("font-size") );
+            var sSize = $("#div1").css("font-size");
+            // console.log( size.slice(0,-2));
+            var iSize = parseInt( sSize.slice(0,-2) );
+            $("#div1").css("font-size",iSize + 2);
+        })
+        $("#small").on("click",function(){
+            var sSize = $("#div1").css("font-size");
+            var iSize = parseInt( sSize.slice(0,-2) );
+            $("#div1").css("font-size",iSize - 2);
+        })
+    </script>
+</body>
+</html>

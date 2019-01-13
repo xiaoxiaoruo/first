@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="hide">hide</button>
+    <button id="show">show</button>
+    <button id="toggle">toggle</button>
+    <button id="animate">animate</button>
+    <button id="stop">stop</button>
+    <div id="div1">
+
+    </div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        /* 
+            fadeIn() fadeOut() fadeTo() fadeToggle() 渐变
+            slideDown() slideUp() slideToggle() 滑动
+            变换的方式不同
+         */
+        $("#hide").on("click",function(){
+            $("#div1").hide(1000);
+        })
+        $("#show").on("click",function(){
+            $("#div1").show(1000);
+        })
+        $("#toggle").on("click",function(){
+            $("#div1").toggle(1000);
+        })
+        $("#animate").on("click",function(){
+            // 执行时间默认400
+            // 不会阻塞下边代码执行
+            // $("#div1").animate({
+            //     height:100,
+            //     width:100,
+            //     opacity:0.5
+            // },2000,function(){
+            //     console.log("hah")
+            // });
+            // console.log("haha");
+            $("#div1").animate({
+                height:100,
+            },1000).animate({
+                opacity:0.2,
+            },1000)
+        })
+        // stop(false,false)默认值时false 第一个值清除队列 第二个值当前动画跳转到最后
+        $("#stop").on("click",function(){
+            $("#div1").stop(true,true);
+        })
+    </script>
+
+</body>
+</html>

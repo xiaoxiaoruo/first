@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul li {
+            list-style: none;
+            height: 50px;
+            width: 50px;
+            background: #898989;
+            float:left;
+        }
+
+        .active {
+            background: blue;
+        }
+        div{
+            height: 200px;
+            width: 200px;
+            position:absolute;
+            top:66px;
+            left:20px;
+            border:1px solid gray;
+        }
+        div{
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li class="active">时事</li>
+        <li>体育</li>
+        <li>娱乐</li>
+    </ul>
+    <div class="show">时事</div>
+    <div>体育</div>
+    <div>娱乐</div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // $("ul").on("click", function (e) {
+        //     var target = e.target;
+        //     $("li").removeClass("active");
+        //     $(target).addClass("active");
+        //     $("div").html( $(target).html() );
+        // })
+        // $("li").on("click",function(){
+        //     $("li").removeClass("active");
+        //     $(this).addClass("active");
+        //     var index = $(this).index();
+        //     $("div").removeClass("show");
+        //     $("div").eq(index).addClass("show");
+        // })
+        $("li").on("click",function(){
+            $(this).addClass("active").siblings().removeClass("active");
+            $("div").eq($(this).index()).addClass("show").siblings().removeClass("show");
+        })
+    </script>
+
+</body>
+
+</html>

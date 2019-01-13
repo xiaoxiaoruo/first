@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .active {
+            background: red;
+            color: #000;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button id="btn">click</button>
+    <div id="div1">哈哈哈</div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // $("#div1").css("background","red").css("color","green");
+        // $("#div1").css({
+        //     background: "red",
+        //     height: 500,
+        //     color: "#000"
+        // })
+        // $("#btn").on("click", function () {
+        //     var $div1 = $("#div1");
+        //     if( $div1.hasClass("active") ){
+        //         $div1.removeClass("active");
+        //     }else{
+        //         $div1.addClass("active");
+        //     }
+        // })
+        $("#btn").on("click", function () {
+            $("#div1").toggleClass("active");
+        })
+    </script>
+
+
+</body>
+
+</html>

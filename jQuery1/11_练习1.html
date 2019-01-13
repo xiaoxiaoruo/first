@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        select {
+            height: 150px;
+            width: 50px;
+            outline: none;
+        }
+
+        #select1 {
+            position: absolute;
+            top: 0px;
+            left: 40px;
+        }
+
+        #select2 {
+            position: absolute;
+            top: 0px;
+            left: 150px;
+        }
+
+        button {
+            display: inline-block;
+            cursor: pointer;
+            background: #898989;
+            outline: none;
+        }
+
+        #choose1 {
+            margin: 123px 0 0 0;
+        }
+
+        .divBtn {
+            margin: -46px 0 0 112px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <select multiple="multiple" id="select1">
+        <option value="">111</option>
+        <option value="">222</option>
+        <option value="">333</option>
+        <option value="">444</option>
+        <option value="">555</option>
+        <option value="">666</option>
+    </select><br>
+    <button id="choose1">添加到右边一个</button><br>
+    <button id="chooseAll1">添加到右边全部</button>
+    <select multiple="multiple" id="select2">
+        <option value="">777</option>
+    </select><br>
+    <div class="divBtn">
+        <button id="choose2">添加到左边一个</button><br>
+        <button id="chooseAll2">添加到左边全部</button>
+    </div>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        $("#choose1").on("click", function () {
+            // $("option").each(function (index, elem) {
+            //     if ($(elem).prop("selected")) {
+            //         $(elem).appendTo("#select2");
+            //     }
+            // })
+            // prop特性 selected 
+            $("#select1 option:selected").appendTo("#select2");
+            $("#select2 option:selected").prop("selected", false);
+        })
+        $("#chooseAll1").on("click", function () {
+            $("#select1 option").appendTo("#select2");
+        })
+        $("#choose2").on("click", function () {
+            $("#select2 option:selected").appendTo("#select1");
+            $("#select1 option:selected").prop("selected", false);
+        })
+        $("#chooseAll2").on("click", function () {
+            $("#select2 option").appendTo("#select1");
+        })
+        $("#select1").on("dblclick", function () {
+            $("#select1 option:selected").appendTo("#select2");
+            $("#select2 option:selected").prop("selected", false);
+        })
+        $("#select2").on("dblclick", function () {
+            $("#select2 option:selected").appendTo("#select1");
+            $("#select1 option:selected").prop("selected", false);
+        })
+
+    </script>
+
+</body>
+
+</html>
