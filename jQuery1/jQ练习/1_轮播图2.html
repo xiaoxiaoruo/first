@@ -75,12 +75,11 @@
 <body>
     <div id="container">
         <div id="img-box">
-            <img src="image/1.jpg" alt="">
-            <img src="image/2.jpg" alt="">
-            <img src="image/3.jpg" alt="">
-            <img src="image/4.jpg" alt="">
-            <img src="image/5.jpg" alt="">
-            <img src="image/1.jpg" alt="">
+            <img src="../../js1/DOM/image/1.jpg" alt="">
+            <img src="../../js1/DOM/image/2.jpg" alt="">
+            <img src="../../js1/DOM/image/3.jpg" alt="">
+            <img src="../../js1/DOM/image/4.jpg" alt="">
+            <img src="../../js1/DOM/image/5.jpg" alt="">
         </div>
         <ul id="btn-box">
             <li class="selected">1</li>
@@ -94,60 +93,48 @@
             <li id="next">&gt;</li>
         </ul>
     </div>
-    <script src="jslib.js"></script>
+
+    <script src="../jquery-1.12.4.js"></script>
     <script>
-
-        var oNext = document.getElementById('next');
-        var oPrev = document.getElementById("prev");
-        var oImgBox = document.getElementById('img-box');
-        var oBtnBox = document.getElementById('btn-box');
-        var aImg = document.getElementsByTagName('img');
-        var aLi = oBtnBox.getElementsByTagName('li');
         var iNow = 0;
-
-        oNext.onclick = function () {
+        var timer;
+        $("#btn-box li").on("mouseover", function () {
+            change($(this).index());
+            iNow = $(this).index();
+        })
+        $("#next").on("click", function () {
             iNow++;
-            // 瞬间拽到第0张图片  索引改为1
-            if (iNow == aImg.length) {
-                oImgBox.style.left = 0;
-                iNow = 1;
+            if (iNow == $("img").length) {
+                iNow = 0;
             }
             change(iNow);
-        }
-
-        oPrev.onclick = function () {
+        })
+        $("#prev").on("click", function () {
             iNow--;
             if (iNow == -1) {
-                oImgBox.style.left = "-3750px";
-                iNow = aImg.length - 2;
+                iNow = $("img").length - 1;
             }
             change(iNow);
-        }
-
-        // 图片索引 0  1       2             n
-
-        // 移动left 0  1*-750  2*-750       n*-750
-
+        })
+        $("#container").on("mouseover",function(){
+            clearInterval(timer);
+        })
+        $("#container").on("mouseout",function(){
+            run();
+        })
         function change(index) {
-            for (var i = 0; i < aLi.length; i++) {
-                aLi[i].className = "";
-            }
-            aLi[index == 5 ? 0 : index].className = "selected";
-            // 这个方法不用写px
-            animate(oImgBox, {
-                left: -index * 750
-            });
+            $("#btn-box li").eq(index).addClass("selected").siblings().removeClass("selected");
+            // 先清除所有动画再执行动画
+            $("#img-box").stop(true,false).animate({
+                left: -index * $("img").width()
+            }, 1000);
         }
-
-
-
-
-
-
-
-
-
-
+        function run(){
+            timer = setInterval(function(){
+                $("#next").trigger("click");
+            }, 1000);
+        }
+        run();
     </script>
 
 </body>

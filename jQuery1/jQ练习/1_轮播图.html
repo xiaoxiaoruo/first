@@ -110,6 +110,7 @@
             clearInterval(timer);
             $(this).addClass("selected").siblings().removeClass("selected");
             index = $(this).index();
+            // index = $(".selected").index();
             // console.log(index);
             $("img").eq(index).fadeIn(300).siblings().fadeOut(300);
         })

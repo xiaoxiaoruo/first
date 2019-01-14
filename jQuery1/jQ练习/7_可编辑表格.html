@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 16px;
+        }
+
+        table {
+            border: 1px solid black;
+            /* 清除表格空隙 */
+            border-collapse: collapse;
+            width: 400px;
+        }
+
+        table td,
+        th {
+            width: 50%;
+            border: 1px solid black;
+            height: 30px;
+        }
+
+        tbody th {
+            background-color: #abc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <thead>
+            <tr>
+                <!-- 合并单元格 -->
+                <th colspan="2"> 鼠标点击表格就可以编辑</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td class="editable">张三</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="editable">李四</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="editable">王五</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td class="editable">赵六</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+        // $("tr td").one("click", function () {
+        //     $(this).after("<input type=" + "text " + "value='" + $(this).html() + "'" + ">");
+        //     $(this).remove();
+        // })
+        // $("tr td").one("keyup", function (e) {
+        //     if (e.which == 13) {
+        //         $(this).after("<td>" + $(this).html() + "</td>");
+        //         $(this).remove();
+        //     }
+        // })
+        $("tr td.editable").on("click", function () {
+            //判断 是否可编辑 如果不可编辑 才做
+            if ($(this).find("input").size() <= 0) {
+                $(this).html("<input value= '" + $(this).html() + "'</input>");
+                $(this).children().trigger("select");// 选中文本
+            }
+        })
+        // 后生成元素额事件绑定问题  事件委托
+        $(".editable").on("keyup", "input", function (e) {
+            // this 就是input 因为只给input绑事件
+            if (e.which == 13) {
+                var $html = $(e.target).val();
+                $(this).parent().html($html);
+            }
+        })
+    </script>
+
+</body>
+
+</html>

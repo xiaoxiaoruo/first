@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            width: 14px;
+            height: 14px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            margin: 5px 5px;
+            float: left;
+            cursor: pointer;
+            list-style: none;
+            background: url(img/theme.gif);
+        }
+
+        .first {
+            background-color: #9a9a9a;
+            background-position: 0 15px;
+        }
+
+        .second {
+            background-color: #afd400;
+            background-position: -20px 0;
+        }
+
+        .third {
+            background-color: #fbae0f;
+            background-position: -40px 0;
+        }
+
+        .fourth {
+            background-color: #0abfcf;
+            background-position: -60px 0;
+        }
+
+        .five {
+            background-color: #e11355;
+            background-position: -80px 0;
+        }
+
+        .six {
+            background-color: #ba3ad9;
+            background-position: -100px 0;
+        }
+
+        button {
+            color: white;
+            outline: none;
+            background-color: #9a9a9a;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li class="first"></li>
+        <li class="second"></li>
+        <li class="third"></li>
+        <li class="fourth"></li>
+        <li class="five"></li>
+        <li class="six"></li>
+    </ul>
+    <button id="btn">新闻，娱乐</button>
+
+    <script src="../jquery-1.12.4.js"></script>
+    <script>
+        $("li").on("click", function () {
+            $(this).css("background-position-y", "15px").siblings().css("background-position-y", "0px");
+            var $color = $(this).css("background-color");
+            $("#btn").css("background", $color);
+        })
+    </script>
+
+</body>
+
+</html>
