@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    background-color: #f0efed;
+}
+.head{
+    height: 1.01rem;
+    color: #fff;
+    background: #06c1ae;
+    border-bottom: 1px solid #21897d;
+    display: flex;
+    position: relative;
+
+}
+.diming{
+    height: 1.01rem;
+    line-height: 1.01rem;
+    font-size: .32rem;
+    margin-right: .2rem;
+    margin-left: .2rem;
+}
+.search{
+    height: 1.01rem;
+    font-size: .32rem;
+    text-align: center;
+    line-height: 1.01rem;
+    flex:1;
+}
+.search a{
+    display: block;
+    margin: .2rem auto;
+    height: .64rem;
+    line-height: .64rem;
+    text-decoration: none;
+    background: rgba(0,0,0,.15);
+    border-radius: .06rem;
+    color: #68dbce;
+    font-size: .26rem;
+}
+.my{
+    height: 100%;
+    line-height: 1.01rem;
+    font-size: .32rem;
+    margin-right: .2rem;
+    margin-left: .2rem;
+}
+.bg{
+    
+}

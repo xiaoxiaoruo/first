@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1. let 没有变量提升
+        // console.log(a)
+        // var a = 5;
+        // // 变量提升
+
+        // var a;
+        // console.log(a)
+        // var a = 5;
+
+        // console.log(b);
+        // let b = 5;
+
+        // aa();
+
+        // function aa(){
+        //     console.log(111);
+        // }
+
+        // var bb;
+        // console.log(bb);
+        // var bb = function(){
+        //     console.log(222);
+        // }
+
+        // 2. let不能重复声明
+
+        // var a = 5;
+        // var a = 6;
+        // console.log(a);
+
+        // let a = 5;
+        // let a = 6;
+        // console.log(a);
+
+
+        // var a = 10;
+        // function aa(){
+        //     console.log(a);
+        //     var a = 20;
+        // }
+        // aa();
+        
+        // 3. let 暂时性死区 ( 在当前作用域中不允许同名的变量进来 )
+        // 上边的b进不去 里边的b不能提升
+        let b = 10;
+        function bb(){
+            console.log(b);
+            let b = 20;
+        }
+        bb();
+
+
+    </script>
+</body>
+</html>
