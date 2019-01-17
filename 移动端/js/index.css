@@ -1,0 +1,227 @@
+*{
+    margin: 0;
+    padding: 0;
+    touch-action:none;
+}
+/* 脱离文档流的定位 宽高百分比相对于可视区 */
+.page{
+    height:100%;
+    width:100%;
+    position: absolute;
+}
+.page-1{
+    background:#083846 ;  
+}
+.page-1 .img1{
+    width:248px;
+    position: absolute;
+    top:2%;
+    left:50%;
+    margin-left:-124px;
+}
+.page-1 .img2{
+    width: 185px;
+    position: absolute;
+    top:62%;
+    left:50%;
+    margin-left:-92px;
+}
+.page .common-img{
+    width: 25px;
+    position: absolute;
+    top: 92%;
+    left: 50%;
+    margin-left: -12px;
+}
+.hide{
+    display: none;
+}
+.page-2 .img1{
+    width: 158px;
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    margin-left: -79px;
+}
+.page-2 .img2{
+    width: 240px;
+    position: absolute;
+    top: 28%;
+    left: 50%;
+    margin-left: -120px;
+}
+.page-2 .img3{
+    width: 241px;
+    position: absolute;
+    top: 36%;
+    left: 50%;
+    margin-left: -120px;
+}
+.page-2 .img5{
+    width: 142px;
+    position: absolute;
+    top: 82%;
+    left: 50%;
+    margin-left: -71px;
+}
+.page-2 .img7{
+    width: 248px;
+    position: absolute;
+    top: 8%;
+    left: 50%;
+    margin-left: -124px;
+}
+.page-2{
+    background: #9261bf;
+}
+.page-3{
+    background: #F3533C;
+}
+.page-3 .img1{
+    height: auto;
+    width: 166px;
+    position: absolute;
+    left: 50%;
+    top: 2%;
+    margin-left: -86px;
+}
+.page-3 .img2{
+    height: auto;
+    width: 250px;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    margin-left: -125px;
+}
+.page-3 .img3{
+    height: auto;
+    width: 172px;
+    position: absolute;
+    left: 50%;
+    top: 28%;
+    margin-left: -55px;
+}
+.page-3 .img4{
+    height: auto;
+    width: 20px;
+    position: absolute;
+    left: 50%;
+    top: 87%;
+    margin-left: -10px;
+}
+.page-3 .img5{
+    height: auto;
+    width: 142px;
+    position: absolute;
+    left: 50%;
+    top: 82%;
+    margin-left: -71px;
+}
+.page-3 .img6{
+    height: auto;
+    width: 25px;
+    position: absolute;
+    left: 50%;
+    top: 92%;
+    margin-left: -12px;
+}
+.page-3 .img7{
+    height: auto;
+    width: 248px;
+    position: absolute;
+    left: 50%;
+    top: 43%;
+    margin-left: -124px;
+}
+/* 动画 */
+
+.moveFromTop{
+    animation: moveFromTop 0.6s ease forwards;
+}
+@keyframes moveFromTop{
+    from{
+        transform: translateY(-100%);
+    }
+}
+.moveFromLeft{
+    animation: moveFromLeft 0.6s ease forwards;
+}
+@keyframes moveFromLeft{
+    from{
+        transform: translateX(-100%);
+    }
+}
+.commonIcon{
+    animation: commonIcon 1.2s ease infinite forwards;
+}
+@keyframes commonIcon{
+    0%{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    50%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}
+.moveFromBottom{
+    animation: moveFromBottom 0.6s ease forwards;
+}
+@keyframes moveFromBottom{
+    from{
+        transform: translateY(100%);
+    }
+}
+.moveCircle{
+    animation:moveCircle 1.2s ease-in-out forwards;
+}
+@keyframes moveCircle{
+    0%{
+        transform: translateY(-80%);
+        opacity: 0.1;
+    }
+    5% {
+        transform: translateY(-80%);
+        opacity: 0.3;
+    }
+    35% {
+        transform: translateY(10%);
+        opacity: 0.8;
+    }
+    60% {
+        transform: translateY(-30%);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+.moveScale{
+    animation: moveScale 0.6s ease forwards;
+}
+@keyframes moveScale{
+    from{
+        transform: scale(0);
+    }
+}
+.moveToTop{
+    animation: moveToTop 0.6s ease forwards;
+}
+@keyframes moveToTop{
+    to{
+        transform: translateY(-100%);
+    }
+}
+.moveToBottom{
+    animation: moveToBottom 0.6s ease forwards;
+}
+@keyframes moveToBottom{
+    to{
+        transform: translateY(100%);
+    }
+}
