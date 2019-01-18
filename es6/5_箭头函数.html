@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <button id="btn"></button>
+    <script>
+        // a();
+        // b();
+        // function a() {// 有函数提升
+        //     console.log("a");
+        // }
+        // var b = function () {
+        //     console.log("b");
+        // }
+
+        // 箭头函数 没有函数提升
+        // var fn = (x) =>{
+        //     console.log("fn" + x);
+        // }
+        // var fn = x => console.log('111');// 简写 只有一个参数的时候可以简写
+        // // var fn = x => x 相当于函数体return x;
+        // var fn2 = ([x, y = 5]) => {
+            // console.log(x, y);
+        // }
+        // fn2([1, 2]);
+        // console.log(fn2.name);
+        // console.log(fn2.length);//返回不带默认值的参数的个数
+
+        // var f1 = function () {
+        //     console.log(this);//window
+        // }
+        // f1();
+
+        /*
+           箭头函数不能用于构造函数
+           箭头函数中this指的是声明时的this 父作用域中的this
+           普通函数中this指的是调用时的this
+           箭头函数中不能使用arguments
+        */
+        // var oBtn = document.getElementById("btn");
+        // oBtn.onclick = () => {
+        //     console.log(this);
+        // }
+        // // window
+        // oBtn.onclick =  () => {
+        //     setInterval(() => {
+        //         console.log(this);
+        //     }, 1000);
+        // }
+
+        //  对象不是作用域
+        // var obj = {
+        //     name: "zxs",
+        //     age: 21,
+        //     say: () => {
+        //         setInterval( ()=> {
+        //             console.log(this);
+        //         }, 1000);
+        //     }
+        // }
+
+        // obj.say();
+
+        /*
+            js中只有全局作用域和函数作用域
+            let和const是块级作用域
+        */
+        /*
+            this指向问题
+            函数中 window
+            点击事件this 指向谁的点击事件this指向谁
+            定时器this指向window
+            在对象中this指向当前对象
+        */
+
+        // function Person(){
+
+        // }
+        // var p1 = new Person();
+
+        
+
+    </script>
+
+</body>
+
+</html>

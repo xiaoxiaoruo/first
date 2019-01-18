@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // "<div id="div1">hahaha</div>"
+        // var str = "zxs",age = 20
+        // var id = "div2";
+        // var txt = "hehehe";
+        // var a = 10;
+        // var b = 20;
+        // console.log("我的名字是" + str + ",我的年龄是" +age );
+        // console.log("<div id='" + id + "'>" + txt + "</div>");
+        // 模板字符串 `${}`
+        // console.log(`<div id="${id}">${txt}</div>`);
+        // console.log(`哈哈${a == 20?20:100} 呵呵${a + b}`);
+
+        var str = "abcdefg";
+        // console.log( str.indexOf("a") );
+        console.log( str.includes("h") );
+
+        console.log( str.startsWith("ab",3) );// 从哪个开始 以什么开始
+        console.log( str.endsWith("ab",3) );// 找对应索引前边的 不包含3 以什么结束
+
+        // 都不改变原来的字符串
+        console.log( str.padStart(8,"x") );// 把'x'从前边填充到8个
+        console.log( str.padEnd(8,"x") );// 从后边填充
+        console.log( str.repeat(3) );// 重复几次
+    </script>
+
+</body>
+
+</html>

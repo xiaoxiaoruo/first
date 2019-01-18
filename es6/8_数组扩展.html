@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul>
+        <li>11</li>
+        <li>22</li>
+        <li>33</li>
+    </ul>
+
+    <script>
+
+        var aLi = document.getElementsByTagName("li");
+        // 把类数组转化成数组
+        var a = Array.from(aLi);
+        a.push("ha");
+        console.log(a);
+
+        // console.log() Array.of()
+        // var arr = new Array(3);
+        // console.log(arr);
+
+        console.log(Array.of(3));
+
+        var arr = ["a", "b", "c", "d", "e", "f"];
+        // console.log(arr);
+        // console.log( arr.copyWithin(1,2,3) );//第一个值表示从哪开始替换 第二第三个值表示从那哪开始到哪结束
+
+        // find 返回满足条件的第一个值
+        // var result = arr.find(function(val,index){
+        //     // console.log(val,index);
+        //     return index>1;
+        // })
+
+        // console.log(result);
+
+        // console.log(arr.fill("xx",1,4));// 填充从哪到哪 含左不含右
+
+        // 输出数组中的值
+        // for (var val of arr) {
+        //     console.log(val);
+        // }
+        // // 输出数组的索引
+        // for (var index of arr.keys()) {
+        //     console.log(index);
+        // }
+        // // 取出数组中的索引和值
+        // for (var [index, val] of arr.entries()) {
+        //     console.log(index, val);
+        // }
+
+        // 循环 没有返回值
+        arr.forEach(function (val, index) {
+            console.log(val, index);
+        })
+
+        // 映射返回一个新数组 用法：映射数组
+        var result = arr.map(function (val, index) {
+            // return val + "xx";
+            if (index > 3) {
+                return val + "xx";
+            } else {
+                return val + "yy";
+            }
+        })
+
+        console.log(result);
+
+        // 过滤 不改变原数组
+        var result1 = arr.filter(function (val, index) {
+            return index > 1;
+        })
+        console.log(arr);
+        console.log(result1);
+
+
+        var arr1 = [{
+            name: "zs",
+            age: 10
+        }, {
+            name: "ls",
+            age: 20
+        }, {
+            name: "ww",
+            age: 30
+        }, {
+            name: "zl",
+            age: 40
+        }]
+
+        var result2 = arr1.filter(function(obj,index){
+            return obj.age > 20;
+        })
+
+        console.log(result2);
+    </script>
+
+</body>
+
+</html>

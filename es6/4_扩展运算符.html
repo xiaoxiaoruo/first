@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        /*
+            扩展运算符 ...
+            1.复制数组
+            2.作为数组的一部分
+            3.合并为数组和对象
+            4.将类数组转化为数组
+        */
+        // let arr = [1,2,3];
+        // console.log(...arr);// 把数组中的元素拿出来
+
+        // let arr2 = [...arr,4,5];
+        // console.log(arr2);
+
+        // let a3 = ["a","b","c"];
+        // let a4 = a3;
+
+        // a3[0] = "d";
+        // concsole.log(a3,a4);
+        // let a5 = [...a3];
+        // a3[0] = "d";
+        // console.log(a3,a5);
+
+        // let a6 = [1,2,3];
+        // let a7 = [4,5,6];
+
+        // let a8 =[...a6,...a7];
+        // console.log(a8);
+
+        // var aLi = document.getElementsByTagName("li");// 类数组 节点列表
+
+        // aLi.push("x");
+        // console.log(aLi);
+
+        // var arr = [...aLi];
+        // arr.push("tcfgvhbj");
+        // console.log(arr);
+
+        // let p1 = {
+        //     name:"zs",
+        //     age:20
+        // }
+        // let p3 = {
+        //     name:"lisi",
+        //     school:"weichuang"
+        // }
+        // let p2 = {...p1,...p3};
+        // // let p2 = {...p1,age:30};
+        // console.log(p2);
+
+        // rest 运算符 返回剩余的(不可以放在前边) rest运算符可以换成xx等 不必须叫这个名
+        // function fn(a,b,...rest){
+        //     console.log(rest);
+        // }
+        // fn(1,2,3,4,5,6);
+
+
+        // arguments 参数 类数组
+        // arguments.callee 调用函数自己 可以用于递归调用
+        // function fn(){
+        //     // console.log(arguments[0]);
+        //     console.log(arguments.callee);//  可以用于递归调用
+        // }
+        // fn(1,2,3,4,5,6);
+
+    </script>
+
+</body>
+
+</html>

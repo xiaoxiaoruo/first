@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            const 与 var的区别
+            1.const没有变量提升
+            2.块级作用域(不同块级作用域可以声明同名变量)(里边的可以调用外边的let变量 外边的不可以调用里边的)
+            3.不能重复声明
+            4.const暂时性死区 (临时失效区) 在当前作用域不允许有同名的变量进来
+        */
+        // 引用数据类型地址改不了
+        // const a = 5;
+        // a = 10;
+        // console.log(a);
+
+        const obj = {
+            name:"zs",
+        }
+        // obj = {
+        //     name:"lisi",
+        // }
+        // obj.freeze();
+        Object.freeze(obj);// obj里的变量不可以改变
+
+        obj.name = "lisi";
+        console.log(obj);
+    </script>
+
+</body>
+
+</html>

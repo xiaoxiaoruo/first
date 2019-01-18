@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ui>
+        <li></li>
+        <li></li>
+    </ui>
+
+    <script>
+        // 1.变量提升
+        // var a;
+        // console.log(a);
+        // var a = 5;
+
+        // let a = 5;
+
+        /* 
+            let 与 var的区别
+            1.let没有变量提升
+            2.块级作用域(不同块级作用域可以声明同名变量)(里边的可以调用外边的let变量 外边的不可以调用里边的)
+            3.不能重复声明
+            4.let暂时性死区 (临时失效区) 在当前作用域不允许有同名的变量进来
+        */
+
+        //全局作用域
+        // for(var i = 0;i < 5;i++){
+        //     console.log(i);
+        // }
+        // console.log(i);
+
+        // {
+        //     let x = 10;
+        // }
+
+        // console.log(x);
+
+        // if(true){
+        //     var a = 10;
+        // }
+
+        // console.log(a);
+        // var aLi = document.getElementsByTagName("li");
+        // 闭包原理 内部函数调用外部函数的变量
+        // for (let i = 0; i < aLi.length; i++) {
+        //     aLi[i].onclick = function () {
+        //         console.log(this.index);
+        //     }
+        // }
+        /* 闭包:
+            外部函数中有一个内部函数，内部函数引用外部函数中的局部变量，
+            使得这个外部函数中的局部变量不释放 
+            缺点:内存泄漏
+        */
+        // for (var i = 0; i < aLi.length; i++) {
+        //     (function (i) {
+        //         aLi[i].onclick = function () {
+        //             console.log(this.index);
+        //         }
+        //     })(i);
+        // }
+
+        // let a = 10;
+        // let a = 20;
+        // console.log(a);
+
+        // 在本作用域中找 找不到去上一个作用域
+        // var a = 5;
+        // function fn(){
+        //     console.log(a);
+        //     var a = 10;
+        // }
+        // fn();
+
+
+        // let暂时性死区 (临时失效区) 在当前作用域不允许有同名的变量进来
+        var a = 5;
+        function fn() {
+            console.log(a);
+            // 跟a(变量)有关的都死了
+            let a = 10;
+        }
+        fn();
+
+
+    </script>
+
+</body>
+
+</html>
