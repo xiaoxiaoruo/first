@@ -18,6 +18,7 @@
 
     <script>
 
+        // includes() 数组中是否包含某个属性
         var aLi = document.getElementsByTagName("li");
         // 把类数组转化成数组
         var a = Array.from(aLi);
@@ -96,7 +97,7 @@
             age: 40
         }]
 
-        var result2 = arr1.filter(function(obj,index){
+        var result2 = arr1.filter(function (obj, index) {
             return obj.age > 20;
         })
 

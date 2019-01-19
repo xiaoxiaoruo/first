@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+            // 方法在原型中
+            say() {
+                console.log(this.name);
+            }
+        }
+
+        var p1 = new Person("zs", 20);
+        console.log(p1);
+
+        class Coader extends Person {
+            constructor(name, age, color) {
+                super(name, age);
+                this.shirt = color;
+            }
+            coding() {
+                console.log("我正在敲代码。。。");
+            }
+            // 静态方法
+            static eat() {
+                console.log("eating...");
+            }
+        }
+
+        var c1 = new Coader("lisi", 20, "绿格子");
+        c1.say();
+        c1.coding();
+        Coader.eat();
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+            // this.say = function () {
+            //     console.log("我的名字" + this.name + "我的年龄是" + this.age);
+            // }
+        }
+        Person.prototype.say = function (name, age) {
+            console.log("我的名字" + this.name + "我的年龄是" + this.age);
+        }
+        var person1 = new Person("zs", 20);
+        person1.say();
+        var person2 = new Person("liss", 30);
+        person2.say();
+
+
+        // 子类中 通过父类.call(this) 继承属性
+        function Coader(name,age){
+            Person.call(this,name,age);
+            this.shirt = "格子";
+        }
+        // 通过子类.prototype = 父类的实例化对象 继承方法
+        Coader.prototype = new Person();
+        Coader.prototype.constructor = Coader;
+        console.log( Coader.prototype.constructor );
+        var c1 = new Coader("静静",18);
+        c1.say();
+
+
+    </script>
+
+</body>
+
+</html>

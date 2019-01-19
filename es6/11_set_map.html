@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // Set 参数只能是数组
+        let b = [1, 2, 3, 4, 5, 2, 4];
+        let a = new Set(b);// set中没有重复的属性  所以可以去重
+        console.log(b);
+        console.log(a);
+
+        console.log([...a]);
+
+        var result = [];
+        for (var val of b) {
+            if (!result.includes(val)) {
+                result.push(val);
+            }
+        }
+        // for (var val of b) {
+        //     if (result.indexOf(val) == -1) {
+        //         result.push(val);
+        //     } else {
+
+        //     }
+        // }
+        console.log(result);
+
+        let c = new Set([1, 2, 3, 5, 1]);
+        // c.add(7);
+        // c.delete(1);
+        // c.clear();
+        console.log(c);
+        console.log(c.has(3));// 判断有没有某个属性
+        console.log(c.size);
+
+        let e = new Map();
+        let obj = {
+            name: "zs",
+        }
+        
+        e.set("name", "zs");
+        e.set(obj, "xxx");
+        e.get("name");
+
+        console.log(e);
+
+    </script>
+
+</body>
+
+</html>
