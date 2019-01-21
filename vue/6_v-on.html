@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <!-- @keyup.13 修饰符 也可以.单词 @keyup.enter -->
+        <input type="text" @keyup.13="fn()">
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+
+            },
+            methods: {
+                fn() {
+                    // if (event.keyCode = 13) {
+                    //     console.log("111");
+                    // }
+                    console.log("111");
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

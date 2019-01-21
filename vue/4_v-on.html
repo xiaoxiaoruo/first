@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        {{count}}
+        <!-- 方法不传参数可以不加括号 -->
+        <button v-on:click="add(2)">click + 2</button>
+        <button @click="add(2,$event)">click +2</button>
+        <button @click="add(3)">click + 3</button>
+        <!-- 
+            add(2,$event) 上边传$event 下边需要接收
+            add(2) 上边不传$event 下边方法里用event进行操作
+         -->
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                count: 0
+            },
+            methods: {
+                add(num) {
+                    // add(num,e){
+                    // console.log(e);
+                    console.log(event);
+                    // console.log(this); 通过this.count访问data下的属性
+                    this.count += num;
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
