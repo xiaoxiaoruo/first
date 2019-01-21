@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 调用Generator 返回的是遍历对象  (Iterator) value表示值 done表示遍历是否结束
+        function* helloWorldGenerator() {
+            yield "hello";
+            yield "world";
+            return "ending";
+        }
+        var hw = helloWorldGenerator();
+        console.log(hw.next());
+        console.log(hw.next());
+        console.log(hw.next());
+        console.log(hw.next());
+
+        /*
+            yield表达式如果用在另一个表达式之中，必须放在圆括号里面。
+            yield表达式用作函数参数或放在赋值表达式的右边，可以不加括号。
+        */
+        // console.log( "hello" + (yield 123) );
+        // let input = yield;
+        // console.log(input);
+
+        /*
+            遍历器对象g调用return方法后，返回值的value属性就是return方法的参数foo。
+            并且，Generator 函数的遍历就终止了，返回值的done属性为true，
+            以后再调用next方法，done属性总是返回true。
+        */
+        
+        function* gen() {
+            yield 1;
+            yield 2;
+            yield 3;
+        }
+
+        var g = gen();
+
+        console.log(g.next());        // { value: 1, done: false }
+        console.log(g.return('foo')); // { value: "foo", done: true }
+        console.log(g.next());        // { value: undefined, done: true }
+
+
+        // Generator 函数也不能跟new命令一起用，会报错。
+
+        // function* g() {
+        //     this.a = 11;
+        // }
+
+        // let obj = g();
+        // obj.next();
+        // obj.a // undefined
+        // 上面代码中，Generator 函数g在this对象上面添加了一个属性a，但是obj对象拿不到这个属性。
+
+        // 改善Promise
+        function* longRunningTask(value1) {
+            try {
+                var value2 = yield step1(value1);
+                var value3 = yield step2(value2);
+                var value4 = yield step3(value3);
+                var value5 = yield step4(value4);
+                // Do something with value4
+            } catch (e) {
+                // Handle any error from step1 through step4
+            }
+        }
+
+    </script>
+</body>
+
+</html>

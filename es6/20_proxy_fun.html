@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let fn = function (a) {
+            console.log("fn...");
+        }
+        var pro = new Proxy(fn, {
+            apply(target, ctx, args) {
+                console.log("apply .. 被调用");
+                console.log("fn 将要被调用");
+                Reflect.apply(...arguments);// 调用fn
+            }
+        })
+        pro("xxx");
+    </script>
+
+</body>
+
+</html>
