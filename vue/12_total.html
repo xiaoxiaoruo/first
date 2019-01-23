@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            background: green;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        #app {
+            margin: 0 auto;
+            height: 500px;
+            width: 300px;
+        }
+
+        .active {
+            background: red;
+        }
+
+        span {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <ul>
+            <li v-for="obj in arr" :class="{active:obj.isA}" @click="fn(obj)">
+                {{obj.name}}
+                <span>{{obj.price}}</span>
+            </li>
+            <li style="border-bottom:1px solid #000;background: #fff;height: 10px;"></li>
+            <li> total: <span>{{total}}</span> </li>
+        </ul>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                total: 0,
+                arr: [{
+                    isA: false,
+                    name: "aaa",
+                    price: 123
+                }, {
+                    isA: false,
+                    name: "bbb",
+                    price: 456
+                },
+                {
+                    isA: false,
+                    name: "ccc",
+                    price: 789
+                }],
+            },
+            methods: {
+                fn(obj) {
+                    if (!obj.isA) {
+                        this.total = this.total + obj.price;
+                    } else {
+                        this.total = this.total - obj.price;
+                    }
+                    obj.isA = !obj.isA;
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

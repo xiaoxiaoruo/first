@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .active{
+            color: red;
+        }
+        /* li:nth-child(1){
+            display: none;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <input type="text" v-model="msg" @keyup="filter()">
+        <button @click="fn()">add</button>
+        <ul>
+            <li v-for="(obj,index) in forShow" :class="{active:obj.isA}" @click="change(obj)">{{obj.val}}<button @click="del(index)">del</button></li>
+        </ul>
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                msg: "",
+                // forLi跟所添加的元素有关啊啊啊！！！
+                forLi: [{
+                    val: "",
+                    isA: false
+                }],
+                forShow: [{
+                    val: "",
+                    isA: false
+                }]
+            },
+            methods: {
+                fn() {
+                    this.forLi.push({
+                        val: this.msg,
+                        isA: false
+                    });
+                    this.msg = "";
+                    this.forShow = [...this.forLi];
+                },
+                del(index) {
+                    this.forLi.splice(index, 1);
+                    this.forShow = [...this.forLi];
+                },
+                change(obj) {
+                    obj.isA = !obj.isA;
+                },
+                filter() {
+                    var arr = this.forLi.filter((obj) => {
+                        // this指向有问题
+                        console.log(obj.val.includes(this.msg));
+                        return obj.val.includes(this.msg);
+                    })
+                    // console.log(arr);
+                    this.forShow = arr;
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

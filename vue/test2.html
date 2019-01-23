@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="div1">
+        <span class="shangpin">A</span>
+        <span class="price">1000</span>
+    </div>
+    <div class="div1">
+        <span class="shangpin">B</span>
+        <span class="price">200</span>
+    </div>
+    <div id="totle">
+        <span class="zongjia">总价为:</span>
+    </div>
+
+    <script src="../jQuery/jquery-1.12.4.js"></script>
+    <script>
+        var tp = 0;
+        var str;
+        str = $(".zongjia").html();
+        $(".div1").on("click", function () {
+            $(this).css("background", "pink");
+            totelPrice = $(this).find(".price").html();
+            console.log(totelPrice);
+            tp = tp + Math.trunc(totelPrice);
+            console.log(tp);
+            console.log(str);
+            $(".zongjia").html(str + " " + tp);
+        })
+    </script>
+
+</body>
+
+</html>
