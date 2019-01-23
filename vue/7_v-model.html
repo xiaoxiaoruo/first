@@ -12,7 +12,10 @@
 
     <div id="app">
         <!-- 双向数据绑定 -->
-        <!-- v-mdel 页面数据发生改变 监测数据变化value-->
+        <!-- 
+            v-mdel 页面数据发生改变 监测数据变化value 将value加入到对应的数组
+            如果只检测数据 可以控制复选框的选中和不选中
+        -->
         <input type="text" v-model="msg">
         <input type="radio" v-model="sex" value="boy">男
         <input type="radio" v-model="sex" value="girl">女

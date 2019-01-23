@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style:none;
+        }
+        li{
+            height: 50px;
+            line-height: 50px;
+            background: #cccccc;
+            padding: 0 10px;
+            margin-bottom: 10px;
+        }
+        #app {
+            width: 400px;
+            margin: 50px auto;
+        }
+        h1{
+            border-bottom:1px solid #000;
+        }
+        span{
+            float: right;
+        }
+        span.teshu{
+            margin-left:10px;
+            color:red;
+        }
+        .active{
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>todolist</h1>
+        名称<input type="text" placeholder="请输入产品名" v-model="msg1"></br>
+        价格<input type="text" placeholder="请输入产品价格" v-model="msg2">
+        <button @click="add()">添加</button></br>
+        <input type="text" placeholder="请输入搜索内容" v-model="msg3"><button @click="search()">搜索</button>
+        <ul>
+            <li v-for="obj in arrShow" :class="{active:obj.isA}" @click="change(obj)">
+                <input type="checkbox" v-model="obj.isA">{{obj.name}}
+                <span class="teshu">{{obj.logo}}</span>
+                <span>{{obj.price}}</span>
+            </li>
+        </ul>
+        <button @click="myDelete()">删除选中</button>总价:{{count}}
+    </div>
+
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                count: 0,
+                msg1: "",
+                msg2: "",
+                msg3: "",
+                arr: [{
+                    name: "裤子",
+                    price: 11,
+                    logo: "[X]",
+                    isA: false
+                }, {
+                    name: "衣服",
+                    price: 22,
+                    logo: "[X]",
+                    isA: false
+                }, {
+                    name: "电脑",
+                    price: 3333,
+                    logo: "[X]",
+                    isA: false
+                }, {
+                    name: "11",
+                    price: 11,
+                    logo: "[X]",
+                    isA: false
+                }],
+                arrShow: [{
+                    name: "裤子",
+                    price: 11,
+                    logo: "[X]",
+                    isA: false
+                }, {
+                    name: "衣服",
+                    price: 22,
+                    logo: "[X]",
+                    isA: false
+                }, {
+                    name: "电脑",
+                    price: 3333,
+                    logo: "[X]",
+                    isA: false
+                }, {
+                    name: "11",
+                    price: 11,
+                    logo: "[X]",
+                    isA: false
+                }]
+            },
+            methods: {
+                add() {
+                    this.arr.push({ name: this.msg1, price: Math.trunc(this.msg2), logo: "[x]", isA: false });
+                    this.arrShow = [...this.arr];
+                },
+                change(obj) {
+                    if (!obj.isA) {
+                        this.count += obj.price;
+                    } else {
+                        this.count -= obj.price;
+                    }
+                    obj.isA = !obj.isA;
+                },
+                myDelete() {
+                    var result = this.arrShow.filter(function (obj, index) {
+                        return obj.isA == false;
+                    })
+                    this.arr = [...result];
+                    this.arrShow = [...this.arr];
+                    this.count = 0;
+                },
+                search() {
+                    if (this.msg3 == "") {
+                        this.arrShow = [...this.arr];
+                    }
+                    var result = this.arr.filter((obj, index) => {
+                        return obj.name.includes(this.msg3);
+                    })
+                    this.arrShow = [...result];
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
