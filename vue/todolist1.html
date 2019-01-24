@@ -50,7 +50,7 @@
         <button @click="add()">添加</button></br>
         <input type="text" placeholder="请输入搜索内容" v-model="msg3" @keyup="search()"><button @click="search()">搜索</button>
         <ul>
-            <li v-for="(obj,index) in arrShow" :class="{active:obj.isA}" @click="change(obj)">
+            <li v-for="(obj,index) in arrShow" :class="{active:obj.isA}" @click="change(obj,index)">
                 <input type="checkbox" v-model="obj.isA">{{obj.name}}
                 <span class="teshu" @click.stop="del(index)">{{obj.logo}}</span>
                 <span>{{obj.price}}</span>
@@ -109,27 +109,37 @@
                     price: 11,
                     logo: "[X]",
                     isA: false
-                }]
+                }],
+                arrCheck: []
             },
             methods: {
                 add() {
                     this.arr.push({ name: this.msg1, price: Math.trunc(this.msg2), logo: "[x]", isA: false });
                     this.arrShow = [...this.arr];
                 },
-                change(obj) {
+                change(obj, index) {
                     if (!obj.isA) {
                         this.count += obj.price;
+                        this.arrCheck.push(index);
                     } else {
                         this.count -= obj.price;
+                        this.arrCheck.splice(this.arrCheck.indexOf(index), 1);
                     }
                     obj.isA = !obj.isA;
                 },
                 myDelete() {
-                    var result = this.arrShow.filter(function (obj, index) {
-                        return obj.isA == false;
+
+                    this.arrCheck.forEach((val, index) => {
+                        this.arrShow.splice(Math.trunc(val), 1);
+                        // this.arr.splice(Math.trunc(val), 1);
                     })
-                    this.arr = [...result];
-                    this.arrShow = [...this.arr];
+
+
+                    // var result = this.arrShow.filter(function (obj, index) {
+                    //     return obj.isA == false;
+                    // })
+                    // this.arr = [...result];
+                    // this.arrShow = [...this.arr];
                     this.count = 0;
                 },
                 search() {

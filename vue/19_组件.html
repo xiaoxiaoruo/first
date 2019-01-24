@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <weichuang></weichuang>
+        <myc1></myc1>
+        <myc2></myc2>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        Vue.component("weichuang", {
+            template: "<h2>hah</h2>"
+        })
+        var vm = new Vue({
+            el: "#app",
+            data: {
+
+            },
+            components: {
+                "myc1": {
+                    template: "<h3>myc1</h3>"
+                },
+                "myc2": {
+                    template: "<p>myc2</p>"
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

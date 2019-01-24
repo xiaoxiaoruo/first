@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 父组件调用子组件 (注：html不区分大小写 会解析为小写)-->
+        <zujian name="111" age="10"></zujian>
+        <zujian name="222" age="20"></zujian>
+    </div>
+    <script src="vue.js"></script>
+    <!-- 组件模板 -->
+    <template id="temp">
+        <div>
+            <h1>{{name}}</h1>
+            <p>{{age}}</p>
+        </div>
+    </template>
+    <!-- 组件模板 -->
+    <!-- <script type="text/template" id="temp"> -->
+    <!-- 外边需要有一个根元素 -->
+    <!-- <div> -->
+    <!-- <h1>{{name}}</h1> -->
+    <!-- <p>{{age}}</p> -->
+    <!-- </div> -->
+    <!-- </script> -->
+    <script>
+        // 父组件向子组件传值 - props
+        var vm = new Vue({
+            el: "#app",
+            data: {
+
+            },
+            components: {
+                // 子组件
+                "zujian": {
+                    // template:"<h1>我是组件{{a}}</h1>",
+                    template: "#temp",
+                    props: ["name", "age"]
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
