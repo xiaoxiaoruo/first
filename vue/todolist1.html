@@ -120,20 +120,41 @@
                 change(obj, index) {
                     if (!obj.isA) {
                         this.count += obj.price;
-                        this.arrCheck.push(index);
+                        this.arrCheck.push(obj);
                     } else {
                         this.count -= obj.price;
-                        this.arrCheck.splice(this.arrCheck.indexOf(index), 1);
+                        this.arrCheck.splice(this.arrCheck.indexOf(obj), 1);
                     }
                     obj.isA = !obj.isA;
                 },
                 myDelete() {
-
-                    this.arrCheck.forEach((val, index) => {
-                        this.arrShow.splice(Math.trunc(val), 1);
+                    // 缺点 按照姓名删除 同名会同时删除 建议：data里添加一个主键
+                    var temp = [];
+                    this.arrCheck.forEach(function(obj, index){
+                        temp.push(obj.name);
                         // this.arr.splice(Math.trunc(val), 1);
                     })
-
+                    temp.forEach((val, index) => {
+                        // 删除用于展示的arr
+                        this.arrShow.forEach((obj1, index1) => {
+                            if (obj1.name == val) {
+                                this.arrShow.splice(index1, 1);
+                            }
+                        })
+                        // 删除用于存储的arr
+                        this.arr.forEach((obj1, index1) => {
+                            if (obj1.name == val) {
+                                this.arr.splice(index1, 1);
+                            }
+                        })
+                    })
+                    // for (var i = 0; i < temp.length; i++) {
+                    //     this.arrShow.forEach((obj, index) => {
+                    //         if (obj.name == temp[i]) {
+                    //             this.arrShow.splice(index, 1);
+                    //         }
+                    //     })
+                    // }
 
                     // var result = this.arrShow.filter(function (obj, index) {
                     //     return obj.isA == false;
