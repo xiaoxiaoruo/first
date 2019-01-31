@@ -1,0 +1,12 @@
+#div1{
+    background: red;
+    width: 200px;
+    height: 200px;
+    /* background: url("img/0.jpg") 0 0 no-repeat; */
+    font-size:50px;
+    transform: rotate(30deg);
+}
+.aa{
+    background: goldenrod;
+    color:aliceblue;
+}

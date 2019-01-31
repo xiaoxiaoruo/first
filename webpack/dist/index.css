@@ -1,0 +1,14 @@
+/*! 小小若 */
+#div1 {
+  background: green;
+}
+
+#div1 {
+  background: red;
+  width: 200px;
+  height: 200px;
+  /* background: url("img/0.jpg") 0 0 no-repeat; */
+  font-size: 50px;
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
