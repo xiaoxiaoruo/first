@@ -5,7 +5,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data(){
+
+  },
+  beforeEnter: (to, from, next) => {
+    // ...
+  }
+};
 </script>
 
 <style scoped>
