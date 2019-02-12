@@ -47,8 +47,8 @@ export default new Router({
       ]
     },
     {
-      path:'/redict',
-      redirect:'/'
+      path:'/redict/:name/:age',
+      redirect:'/about/:name/:age'
     }
   ]
 })
