@@ -13,22 +13,11 @@
 </template>
 
 <script>
+import {mapMutations,mapState} from "vuex";
 export default {
-  // beforeEnter: (to, from, next) => {
-  //   location.href = "http://localhost:8080/";
-  // },
-  data() {
-    return {
-      // color: ""
-    };
-  },
-  methods: {
-    change(obj) {
-      // 通过$emit 向父组件传值
-      this.$emit('changeBg',obj);
-    }
-  },
-  props: ["menu","color"]
+  computed:mapState(['name','color']),
+  methods: mapMutations(['change']),
+  props: ["menu"],
 };
 </script>
 

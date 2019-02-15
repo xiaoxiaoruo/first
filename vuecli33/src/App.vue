@@ -2,7 +2,7 @@
   <div id="app">
     <!-- <router-view/> 组件放在这里占位 -->
     <button @click="prev()">&lt;</button>&nbsp;
-    <button @click="prev()">&gt;</button>&nbsp;
+    <button @click="next()">&gt;</button>&nbsp;
     <button @click="goHome()">goHome</button>
     <div id="nav">
       <router-link to="/">Home</router-link>|

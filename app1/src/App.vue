@@ -1,30 +1,20 @@
 <template>
   <div id="app">
-    <Header :objYa="objYa"></Header>
+    <Header></Header>
     <div class="content">
       <router-view/>
     </div>
-    <Footer :menu="menu" :color="objYa.bgColor" @changeBg="change"></Footer>
+    <Footer :menu="menu"></Footer>
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
+import { mapMutations } from "vuex";
 export default {
-  methods: {
-    change(obj) {
-      this.objYa = obj;
-    }
-  },
   data() {
     return {
-      objYa: {
-        path: "/movie",
-        name: "电影",
-        bgColor: "#ff0036"
-      },
-      color: "",
       menu: [
         {
           path: "/movie",
@@ -53,13 +43,13 @@ export default {
     Header,
     Footer
   },
+  methods: mapMutations(["change"]),
   created() {
-    let result = this.menu.filter((obj, index) => {
+    let result = this.menu.filter((obj, index)=> {
       return obj.path == this.$route.path;
     });
-    // 如果数组中匹配到了  才修改obj的的值，否则用obj的默认值
-    if (result.length) {
-      this.objYa = result[0];
+    if(result.length){
+      this.change(result[0]);
     }
   }
 };
