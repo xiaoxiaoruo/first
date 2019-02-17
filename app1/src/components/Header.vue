@@ -27,6 +27,7 @@ header {
   left: 0;
   line-height: 1rem;
   color: #fff;
+  z-index:2;
 }
 .goHome {
   position: absolute;

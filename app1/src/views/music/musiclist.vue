@@ -53,7 +53,4 @@ export default {
 </script>
 
 <style scoped>
-.aplayer{
-  overflow: hidden;
-}
 </style>
