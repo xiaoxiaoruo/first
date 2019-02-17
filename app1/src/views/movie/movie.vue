@@ -17,6 +17,8 @@
         </div>
       </li>
     </ul>
+    <img class="loading" src="@/assets/imgs/loading.gif" v-show="isShow">
+    <div class="bottom" v-show="isBottom">到底了,哦~~~~</div>
   </div>
 </template>
 
@@ -24,18 +26,29 @@
 import Axios from "axios";
 export default {
   data() {
+    // isShow:false;
+    // isBottom:false;
     return {
-      movieList: []
+      movieList: [],
+      isShow: false,
+      isBottom: false
     };
   },
   methods: {
     getMovie() {
+      this.isShow = true;
       //   Axios.get("/movie.json")
       Axios.get("/movie10.json")
-        .then((result) => {
+        .then(result => {
           console.log(result);
           // 取到data中的subjects 这里存储了电影的信息对象数组
-          this.movieList = [...result.data.subjects, ...this.movieList];
+          setTimeout(() => {
+            this.movieList = [...result.data.subjects, ...this.movieList];
+            this.isShow = false;
+            if( this.movieList.length == result.data.total ){
+              this.isBottom = true;
+            }
+          }, 2000);
         })
         .catch();
     }
@@ -55,8 +68,8 @@ export default {
         document.documentElement.scrollTop +
           document.documentElement.clientHeight ==
         document.documentElement.scrollHeight
-      ) {
-        this.getMovie();
+      && !this.isBottom) {
+          this.getMovie();
       }
     };
   }
@@ -74,9 +87,19 @@ li {
 li img {
   width: 90px;
   height: 123px;
+  margin: auto 0;
 }
 .info {
   flex-grow: 1;
   margin-left: 0.2rem;
+}
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bottom{
+  text-align: center;
 }
 </style>
