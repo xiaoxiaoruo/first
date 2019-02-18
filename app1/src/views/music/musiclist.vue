@@ -1,17 +1,6 @@
 <template>
   <div>
-    <aplayer
-      :music="{
-    title: '广东爱情故事',
-    artist: '广东雨神',
-    src: 'http://sc1.111ttt.cn/2018/1/03/13/396131203208.mp3',
-    pic: 'https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=3283023278,2758205127&fm=58&bpow=1824&bpoh=1824',
-    lrc:'http://localhost:8080/lrc/广东爱情故事.lrc'
-    }"
-      :list="musicList"
-      :showLrc="true"
-      :autoplay="true"
-    ></aplayer>
+    <aplayer :music="musicList[0]" :list="musicList" :showLrc="true" :autoplay="true" v-if="isShow"></aplayer>
   </div>
 </template>
 
@@ -21,7 +10,9 @@ import Aplayer from "vue-aplayer";
 export default {
   data() {
     return {
-      musicList: []
+      musicList: [],
+      // 页面aplayer先加载，所以加一个v-if去控制，先接收再显示
+      isShow:false
     };
   },
   created() {
@@ -41,6 +32,7 @@ export default {
             lrc: "http://localhost:8080/" + element.lrc
           };
           this.musicList.push(obj);
+          this.isShow = true
         });
         console.log(this.musicList);
       })
