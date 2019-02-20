@@ -5,17 +5,29 @@
       <swipe-item class="slide2"></swipe-item>
       <swipe-item class="slide3"></swipe-item>
     </swipe>
+    <slide :imgs="imgs"></slide>
   </div>
 </template>
 
 <script>
 // require('vue-swipe/dist/vue-swipe.css');
+import Slide from "@/components/Slide.vue";
 import "vue-swipe/dist/vue-swipe.css";
 import { Swipe, SwipeItem } from "vue-swipe";
 export default {
+  data(){
+    return {
+       imgs: [
+        "http://localhost:8080/img/01.jpg",
+        "http://localhost:8080/img/02.jpg",
+        "http://localhost:8080/img/03.jpg"
+      ]
+    }
+  },
   components: {
     Swipe,
-    SwipeItem
+    SwipeItem,
+    Slide
   }
 };
 </script>

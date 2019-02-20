@@ -17,14 +17,10 @@
 
 <script>
 export default {
+  props:["imgs"],
   data() {
     return {
-      iNow: 0,
-      imgs: [
-        "http://localhost:8080/img/01.jpg",
-        "http://localhost:8080/img/02.jpg",
-        "http://localhost:8080/img/03.jpg"
-      ]
+      iNow: 0
     };
   },
   created() {

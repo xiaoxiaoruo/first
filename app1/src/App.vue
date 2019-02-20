@@ -45,11 +45,34 @@ export default {
   },
   methods: mapMutations(["change"]),
   created() {
-    let result = this.menu.filter((obj, index)=> {
+    // result是个数组
+    let result = this.menu.filter((obj, index) => {
       return obj.path == this.$route.path;
     });
-    if(result.length){
+    if (result.length) {
       this.change(result[0]);
+    } else {
+      if (this.$route.path.includes("music")) {
+        this.change({
+          name: "音乐",
+          bgColor: "gray"
+        });
+      } else if (this.$route.path.includes("movie")) {
+        this.change({
+          name: "电影",
+          bgColor: "#ff0036"
+        });
+      } else if (this.$route.path.includes("book")) {
+        this.change({
+          name: "书籍",
+          bgColor: "blue"
+        });
+      } else if (this.$route.path.includes("photo")) {
+        this.change({
+          name: "图片",
+          bgColor: "green"
+        });
+      }
     }
   }
 };
