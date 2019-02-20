@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        class Person{
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+
+            say(){
+                console.log('我的名字是'+this.name)
+            }
+
+        }
+        var person1 = new Person('zs',20);
+        person1.say();
+
+        class Coder extends Person{
+            constructor(name,age){
+                super(name,age)
+
+            }
+            coding(){
+                this.say();
+                console.log(this.name+'正在敲代码，我已经 '+ this.age+'岁了');
+            }
+        }
+
+        var coder1 = new Coder('lisi',50);
+
+        console.log(coder1.name)
+        coder1.say();
+        coder1.coding();
+
+
+
+
+
+
+    
+    
+    
+    </script>
+    
+</body>
+</html>
