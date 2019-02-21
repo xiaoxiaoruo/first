@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        class Main extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {
+                    num:100,
+                    a:"将军a",
+                    b:"将军b",
+                    numA:180,
+                    numB:90
+                }
+                this.diaobingA = this.diaobingA.bind(this);
+                this.diaobingB = this.diaobingB.bind(this);
+
+            }
+            diaobingA(){
+                if(this.state.num >= 20){
+                    let num = this.state.num - 20;
+                    let numA = this.state.numA + 20;
+                // 不用setState({})也可以改值，只是不会在页面渲染出来
+                    this.setState({
+                        num,
+                        numA
+                    })
+                }else{
+                    alert("士兵数量不足！！");
+                }
+            }
+            diaobingB(){
+                if(this.state.num >= 20){
+                    let num = this.state.num - 20;
+                    let numB = this.state.numB + 20;
+                    this.setState({
+                        num,
+                        numB
+                    })
+                }
+            }
+            render(){
+                return (
+                    <div>
+                        <h3>剩余士兵数量:{this.state.num}</h3>
+                        <Diaobing jiangjun={this.state.a} numAll={this.state.numA} diaobing={this.diaobingA}></Diaobing>
+                        <Diaobing jiangjun={this.state.b} numAll={this.state.numB} diaobing={this.diaobingB}></Diaobing>
+                    </div>
+                )
+            }
+        }
+        class Diaobing extends React.Component{
+            constructor(props){
+                super(props);
+                this.add = this.add.bind(this);
+            }
+            add(){
+                if(this.props.jiangjun == "将军a"){
+                    this.props.diaobing();
+                }
+                if(this.props.jiangjun == "将军b"){
+                    this.props.diaobing();
+                }
+            }
+            render(){
+                return (
+                    <div>
+                        <h3>{this.props.jiangjun}有士兵:{this.props.numAll}</h3>
+                        <button onClick={this.add}>调兵</button>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(<Main></Main>,document.getElementById("root"))
+    </script>
+</body>
+
+</html>

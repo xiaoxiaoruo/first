@@ -28,10 +28,24 @@
                     }
                     changeHandle(){
                         let str1 = [];
-                        for(var i = this.state.str.length - 1;i > 0;i--){
-                            str1.push(str.charAt(i));
+                        let str2 = [];
+                        let str3;
+                        let i = 0;
+                        let k = 0;
+                        while(this.state.str.charAt(i)){
+                            str1.push(this.state.str.charAt(i))
+                            i++;
                         }
-                        this.state.str = str1.join("");
+                        console.log(str1);
+                        for(var j = str1.length - 1;j >= 0;j--){
+                            str2[k] = str1[j];
+                            k++;
+                        }
+                        str3 = str2.join("");
+                        console.log(str3);
+                        this.setState({
+                            str:str3
+                        })
                     }
                     // bind(this) 传this改变this指向
                     render(){

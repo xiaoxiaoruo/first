@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+
+        class Add extends React.Component{
+            constructor(props){
+                super(props);
+                this.add = this.add.bind(this);
+            }
+            add(){
+                if(this.myInput.value){
+                    this.props.addHandler(this.myInput.value);
+                    this.myInput.value = "";
+                }
+            }
+            // <button onClick={()=>{
+            //             if(this.myInput.value){
+            //         this.props.addHandler(this.myInput.value);
+            //         this.myInput.value = "";
+            //     }
+            // }}>add</button>
+            render() {
+                return (
+                    <div>
+                       <input type="text" ref={input=>{this.myInput = input}}/>
+                       <button onClick={this.add}>add</button>
+                    </div>
+                )
+            }
+        }
+      
+        class List extends React.Component{
+            render() {
+                return (
+                    <ul>
+                        {
+                            this.props.todos.map(function(val,index){
+                                return <li key={index}>{val}</li>
+                            })
+                        }
+                    </ul>
+                )
+            }
+        }
+
+        class Main extends React.Component{
+            constructor(props){
+                super(props),
+                this.state = {
+                    todos:["吃饭","睡觉","打豆豆"],
+                }
+                this.addHandler = this.addHandler.bind(this);
+            }
+            addHandler(value){
+                console.log(value);
+                var todos = [...this.state.todos];
+                todos.push(value);
+                this.setState({
+                    // 不可以在setState中用push()方法
+                    todos
+                });
+            }
+            render() {
+                return (
+                    <div>
+                        <h1>简单的toDoList</h1>
+                        <Add addHandler = {this.addHandler}></Add>
+                        <List todos={this.state.todos}></List>
+                    </div>
+                )
+            }
+        }
+      
+        ReactDOM.render(<Main></Main>,document.getElementById("root"))
+    </script>
+</body>
+
+</html>

@@ -25,6 +25,7 @@
                         this.state = {
                             num:1
                         }
+                        // this.addHandle = this.addHandle.bind(this);
                     }
                     addHandle(){
                         this.setState({
@@ -32,6 +33,7 @@
                         })
                     }
                     // bind(this) 传this改变this指向
+                    // 点击事件后边的方法不加() 不调用
                     render(){
                         return (
                             <div>
