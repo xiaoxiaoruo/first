@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .red {
+            background: red;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="root">
+
+    </div>
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="browser.min.js"></script>
+    <script type="text/babel">
+        class MyConmponent extends React.Component{
+            constructor(params){
+                super(params);
+                this.state = {
+                    msg:''
+                }
+                this.change = this.change.bind(this);
+            }
+            change(event){
+                // console.log( event.target.value );
+                this.setState({
+                    msg:event.target.value
+                })
+            }
+            render(){
+                let style = {
+                    background:"green",
+                    border:"2px solid #000"
+                }
+                // onChange 事件 当内容发生改变的时候触发
+                return (
+                    <div>
+                        <div style={style}>hah</div>
+                        <h1 className="red">{this.state.msg}</h1>
+                        <input type="text" onChange={this.change}/>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(<MyConmponent></MyConmponent>,document.getElementById("root"));
+    </script>
+
+</body>
+
+</html>
