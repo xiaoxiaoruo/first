@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+       var str = 'abcdef'
+       var reg = /abc/
+    //    /a{2}/ 匹配几个连续的a  /a{3,4} 匹配3-4个a  a{n,}n个以上  匹配连续的
+    // *  => {0,}  + => {1,0}    ? => {0,1}    后边加?尽可能少的匹配
+    // /./ 匹配除了换行的所有字符 不加量词只匹配一个
+    // | 或前后断句
+    // /^[a-zA-z][a-zA-Z0-9_]*?/  *?修饰后半部分集合
+    // /[^abc]/  非adc的第一个字符
+    // /[\bc]/ \b表示边界 c是边界的 放前放后不一样  同时存在有一个不是边界就返回null \B非边界
+    // /w 取到字母数字下划线 () 取子集 /(/w)(/w)\1\2/  \1 反向引用子集
+    // /i忽略大小写  /g全局 取所有的符合的结果,不加全局是匹配第一个
+    // /d 数字
+    // match返回的是数组
+       var reg = /a{2}/
+       
+       console.log(reg.exec(str));
+    </script>
+
+
+</body>
+</html>
